@@ -1,0 +1,53 @@
+MAIN = main
+NAME = ustcthesis
+CLSFILES = $(NAME).cls ustcextra.sty
+BSTFILES = ustcthesis-numerical.bst ustcthesis-authoryear.bst ustcthesis-bachelor.bst
+
+SHELL = bash
+LATEXMK = latexmk -xelatex -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1
+VERSION = $(shell cat $(NAME).dtx | egrep -o "\[\d\d\d\d/\d\d\/\d\d v.+\]" \
+	  | egrep -o "v\S+")
+TEXMF = $(shell kpsewhich --var-value TEXMFHOME)
+
+.PHONY : main cls doc clean all install distclean zip FORCE_MAKE
+
+main : $(MAIN).pdf
+
+all : main doc
+
+cls : $(CLSFILES) $(BSTFILES)
+
+doc : $(NAME).pdf
+
+$(MAIN).pdf : $(MAIN).tex $(CLSFILES) $(BSTFILES) FORCE_MAKE
+	$(LATEXMK) $<
+
+%.cls %-numerical.bst %-authoryear.bst %-bachelor.bst : %.dtx
+	xetex $<
+
+$(NAME).pdf : $(NAME).dtx FORCE_MAKE
+	$(LATEXMK) $<
+
+clean : FORCE_MAKE
+	latexmk -c $(MAIN).tex
+	latexmk -c $(NAME).dtx
+
+distclean :
+	latexmk -C $(MAIN).tex
+	latexmk -C $(NAME).dtx
+
+install : cls doc
+	mkdir -p $(TEXMF)/{doc,source,tex}/latex/$(NAME)
+	mkdir -p $(TEXMF)/bibtex/bst/$(NAME)
+	cp $(BSTFILES) $(TEXMF)/bibtex/bst/$(NAME)
+	cp $(NAME).pdf $(TEXMF)/doc/latex/$(NAME)
+	cp $(NAME).dtx $(TEXMF)/source/latex/$(NAME)
+	cp $(CLSFILES) $(TEXMF)/tex/latex/$(NAME)
+
+zip : main doc
+	ln -sf . $(NAME)
+	zip -r ../$(NAME)-$(VERSION).zip $(NAME)/{README.md,LICENSE,\
+	$(NAME).dtx,$(NAME).pdf,$(NAME).cls,$(NAME)-*.bst,figures,\
+	$(MAIN).tex,ustcextra.sty,chapters,bib,$(MAIN).pdf,\
+	latexmkrc,Makefile}
+	rm $(NAME)
