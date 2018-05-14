@@ -1,0 +1,477 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX program = xelatex
+
+\documentclass[bachelor,english,numbers]{ustcthesis}
+% bachelor|master|doctor [professional] [english] [pdf] [authoryear|numebers]
+
+\usepackage{ustc-package}
+
+\graphicspath{{figures/}} %%%%%%%%%%%%%%%%% directory of pictures
+
+\title{具有赝磁场的石墨烯中的\\复合费米子液体理论}
+\author{胡啸东}
+\major{理论物理}
+\supervisor{副教授\ 刘国柱}
+\cosupervisor{副教授\ 吴英海}
+
+%\title{中国科学技术大学\\学位论文模板示例文档}
+%\author{李泽平}
+%\major{数学与应用数学}
+%\supervisor{华罗庚\ 教授}
+%\cosupervisor{钱学森\ 教授}
+% \date{二〇一七年五月一日}    % 注释掉则为今日
+% \professionaltype{专业学位类型}
+% \secrettext{机密\quad 小于等于20年}    % 内部|秘密|机密，注释本行则不保密
+
+\entitle{Composite Fermion Liquid\\in Graphene with\\Pseudo-magnetic Field}
+\enauthor{Xiaodong Hu}
+\enmajor{Theoretical Physics}
+\ensupervisor{Prof.\ Guo-Zhu Liu}
+\encosupervisor{Prof.\ Ying-Hai Wu}
+%\ensupervisor{Prof. Luogeng Hua}
+%\encosupervisor{Prof. Xuesen Qian}
+% \endate{May 1, 2017}    % today if commented
+% \enprofessionaltype{Professional degree type}
+% \ensecrettext{Confidential\quad Less than or equal to 20 years}
+% Internal|Secret|Confidential
+
+\begin{document}
+
+\maketitle
+
+% 本科论文:
+%   frontmatter: 致谢、目录、中文摘要、英文摘要
+%   mainmatter: 正文章节、参考文献
+%   appendix: 附录
+%
+% 硕博论文:
+%   frontmatter: 中文摘要、英文摘要、目录、符号说明
+%   mainmatter: 正文、参考文献
+%   appendix: 附录
+%   backmatter: 致谢、发表论文
+
+\frontmatter
+
+\begin{acknowledgements}
+	I chrished the final time in USTC and was fortunately being supervised by two teachers during my research on this problem. I appreciated the theoretical guidance of Prof. Guo-Zhu Liu in USTC, without whom I cannot get out of mire when recovering the tedious computation details of HLR's theory during my winter vacation. I benefit a lot from his guidance of functional path integral formalism, which accelarated my understanding of the relevant chapters of Altland\&Simons's book and calculation of the matrix element of polarization tensor. His course \emph{Quantum Many Body Physics} also endowed me a solid foundation on theoretical condensed matter physics. I also appreciated the physical instruction from Prof. Ying-Hai Wu in HUST. Weekly exchanges with him cleared all my vagueness about the physical picture of the $\mathcal{K}$-matrix with high degenerency and multi-layer flux attachment. These discussions also prevented me from the potential deviation from the mainline --- once I naively insisted that we should develop a Fermionic Chern-Simons theory for massless Dirac fermions, it was his distinct demonstration terminated my divergent thoughts and helped me re-focus on our project.\par
+	
+	Besides, academic exchanges and debates with my best friend Zhi-hao Zhang and roommate Shu-xuan Wang also helped me replenish details of the derivation of singular unitary transformation and clarify some sublte concepts about functional mean-fields and spontaneous symmetry breaking. And an anonymous answerer on Chinese Q\&A website {\texttt zhihu} also provide me with some information about half-filling FQHE at frontier. So here I also sincerely express my gratitudes to them.
+\end{acknowledgements}
+
+\tableofcontents
+
+%\tableofcontents
+%\listoffigures
+%\listoftables
+%\listofalgorithms
+%\input{chapters/notation}
+
+\begin{abstract}
+	我们在本文中发展了一套研究石墨烯中朗道填充因子 $\nu=1/2$ 且非极化填充的有效理论，计算了它在由扭曲石墨烯造成的反向赝磁场激励下的电磁响应与霍尔电导。\par
+
+	在部分填充的情况下，由于费米子被限制在最低朗道能级，当我们将原来的万尼尔表象下的场算符变换到朗道能级波函数的表象上时，发现子格点简并度与谷简并度合二为一，故而根据本征函数的性质，可以用有质量的二次型色散关系的准粒子哈密顿量来有效地描述石墨烯中的无质量狄拉克费米子。而尽管表象变换后一般能级的库伦相互作用变得极为复杂，对于我们关注的最低朗道能级的情况，计算后依旧可以采用原来的相互作用形式。因此我们的哈密顿量与正常的半导体单分量分数量子霍尔效应的差异仅仅在于谷简并带来的多分量。\par
+
+	基于非极化填充的多分量 Chern-Simon 理论，我们在反向赝磁场下计算了电磁响应张量。发现它的激发谱，无论是有能隙的分数量子霍尔态激发，还是无能隙的激发，都与正常半填充因子分数量子霍尔效应的结果一模一样；但是在我们的独特激励下，它的径向响应变为正常半填充因子情况的两倍，而静态横向电导精确等于零。通过表面声学波实验，可以验证石墨烯在分数填充因子下我们的非相对论费米型 Chern-Simons 理论的有效性。
+
+	\keywords{石墨烯；赝磁场；分数量子霍尔效应；费米型 Chern-Simons 理论}
+\end{abstract}
+
+\begin{enabstract}
+	We develop an effective theory of unpolarized states in half-filled graphene, studying the electromagnetic response and Hall conductance under the pseudo-magnetic field induced by symmetrical strain on graphene.\par
+
+	In the case of partial filling, when we perform the representation transformation from Wannier function to Landau Level (LL) wave functions, one finds that the valley degenerency coincides with the sublattice degenerency at the low-
+	est LL. So in terms of the form of eigen functions, we can make use of the Hamiltonian of massive particles with parabola dispersion relation to discribe the massless Dirac fermions in graphene. Although the expression of Coulomb interaction becomes extremely complicated after transforamtion of representation for general LL, in the situation what we concern with, where only the lowest LL is occupied, original form of interaction never becomes futile after computation. Thus the only difference of our theory to that of fraction quantum Hall effects (FQHE) in usual semiconductors comes from the more freedoms brought by the valley degenrency.\par
+
+	Based on the fermionic Chern-Simons theory of unpolarized states, we calculate the electromagnetic response tensor under the stimulus of opposite pseudomagnetic field and find that the excitation spectrum, whatever gapped FQHE states or gapless one, concides with that of ususal partially filled FQHE. But our special stimulus makes the longitudinal reponse double and the static transverse conductance vanish. The effectiveness of our theory can be confirmed by the accurate surface acoustic wave experiments.  
+
+	\enkeywords{Graphene; Pseudo-magnetic Field ; Fractional Quantum Hall Effect; Fermi-onic Chern-Simons Theory}
+\end{enabstract}
+
+
+\mainmatter
+%\input{chapters/intro}
+%\input{chapters/math}
+%\input{chapters/floats}
+%\input{chapters/citations}
+\chapter{Introduction}
+	\section{Historical Development of Fractional Quantum Hall Effect}
+	\section{Graphene in Strong Magnetic Field: Relativistic or Non-relativistic}
+		\indent\par The electronic properties of Graphene is well discribed by the tight binding model \cite{altland2010condensed}, in which only nearest neighborhood hopping interaction is considered. Each of the six corner of the hexagonal Brillouin zone protect the time-reversal symmetry [???], but only two of these doubles are inequivalent ones, giving rise to the two-fold pseudospin degenerancy $\xi=\pm$. Given the celebrated Hamiltonian of graphene in the continuum limit, one can directly write down the Hamiltonian of free Dirac fermions in a strong magnetic field $\bm{B}$ by simple minimal-coupling principle\footnote{The mininal-coupling principle in tight binding model is called \emph{Peierls substitution} \cite{goerbig2011electronic}. Unlike the usual continuous situation, Peierls substitution holds only if the lattice constant $a$ is much smaller than the \emph{characteristic magnetic length} $\ell_B\equiv\sqrt{\frac{\hbar}{eB}}$. And because $a=0.24\mathrm{nm}$ and $\ell_B\sim26\mathrm{nm}/\sqrt{B[\mathrm{T}]}$, this condition is fullfilled in graphene for strong magnetic fields.} 
+		\begin{equation}\label{0.2.1}
+			H^\xi_B=\xi v_F\left(\begin{array}{cc}
+				0 & \Pi_x-i\Pi_y\\
+				\Pi_x+i\Pi_y & 0
+			\end{array}\right),
+		\end{equation}
+		where $v_F$ is the Fermi velocity and $\Pi_i$ are the kinetic momentum $\bm{\Pi}=\bm{p}+e\bm{A}$. Through introducing the congugate ladder operator $a=\frac{\ell_B}{\sqrt{2}}(\Pi_x-i\Pi_y)$ and $a^\dagger=\frac{\ell_B}{\sqrt{2}}(\Pi_x+i\Pi_y)$, the free Hamiltonian \eqref{0.2.1} becomes 
+		\begin{equation}\label{0.2.2}
+			H^\xi_B=\xi\dfrac{\sqrt{2}v_F}{\ell_B}\left(\begin{array}{cc}
+				0 & a \\ a^\dagger & 0
+			\end{array}\right),
+		\end{equation}
+		whose eigenstates can be directly solved by squring \eqref{0.2.2}, giving \cite{tHoke2006fractional,tHoke20074}
+		\begin{equation}\label{0.2.3}
+			\Psi^\xi_{(n\neq0,m)}(\bm{x})=\dfrac{1}{\sqrt{2}}\left(\begin{array}{c}
+				-i\mathop{\mathrm{sgn}}{(n)}\psi_{|n|-1,m}\\
+				\xi\psi_{|n|,m}
+			\end{array}\right),\quad\Psi^\xi_{(0,m)}(\bm{x})=\left(\begin{array}{c}
+				0\\
+				\psi_{0,m}
+			\end{array}\right),
+		\end{equation}
+		with $\psi_{n,m}(\bm{x})$ the eigen function of the Hamiltonian with \emph{quardratic dispersion} in $n$th Landau Level (LL) with the angular momentum $\hat{L}_z$ equal to $m$, i.e., the LL wave function of usual semiconductor heterojunction like GaAs in Tsui's early experiments \cite{tsui1982two,tHoke20074}
+		\begin{equation*}
+			\psi_{n,m}(z)=\dfrac{(-1)^n\sqrt{n!}}{\sqrt{2^{m+n}\pi (m+n)!}}z^m L_n^m\left(\dfrac{|z|^2}{2}\right)e^{-|z|^2/4},
+		\end{equation*}
+		where $z=x-iy$ and $L_n^m(z)$ is the Laguerre polynomials.\par
+		Recall that the column of spinors \eqref{0.2.3} represents the two sublattice freedoms. So the distinctive form of $n=0$ LL wave function, in which one column is always zero, indicates that the valley degenerancy coincides with the sublattice freedoms at the lowest LL, and the two sublattice, $B$ sublattice in the $K'$-valley while $A$ sublattice in the $K$-valley, decouple at zero energy. That is, {\bf the effective theory for \emph{free massless Dirac fermions} constrained at the Lowest LL takes exaclt the same form of \emph{non-relativistic} case but with an extra two-fold pseudospin degenerancy}\footnote{The ambient magnetic field is strong enough to split the energy spectrum into two \emph{nonoverlapping} groups due to Zeemann effects, so we ignore the real spin freedoms of Fermions.}, whose fermionic field operator are denoted as $(\psi_e)_\alpha$ for $\alpha=\uparrow,\downarrow$. Similar to transforming the fields operators from Bloch representation to Wannier representation in Hubburd model \cite{nagaosa1999quantum}, the procedure we does above is actually {\bf projecting the free Hamiltonian of original field operator to a new basis of LL wave functions}.\par
+		However, apart from the free parts of Hamiltonian, motivated by the mechanism of Fermionic Chern-Simons theory in GaAs, Coulomb interaction must play a cruicial role in formation of incompressible FQHE states obseved in graphene \cite{bolotin2009observation}, without which the hierachical structure of fraction Hall conductance cannot be consistently explained \cite{simon1998chern,lopez1991fractional}. After decomposing the density operator $\rho^{\xi}_{n,m}(\bm{q})\equiv\psi$ in the basis of spinor wave functions \eqref{0.2.3}
+		\begin{equation*}
+			\rho^{\xi}_{n,m}(\bm{q})=\sum_{n,m,n',m'}\mathcal{F}_{n,m;n'm'}\widetilde{\rho}^{\xi',\xi}_{n,m;n'm'}(\bm{q}),
+		\end{equation*}
+		Coulomb interaction becomes
+		\begin{equation*}
+		 	H_{\text{int}}=\dfrac{1}{2}\sum_{\bm{q}}\sum_{\substack{n_1,m_1,\cdots,n_4,m_4\\\xi_1,\cdots,\xi_4}}v_{n_1,m_1,\cdots,n_4,m_4}\widetilde{\rho}_{n_1,m_1;n_3,m_3}^{\xi_1,\xi_3}(\bm{-q})\widetilde{\rho}_{n_2,m_2;n_2,m_2}^{\xi_4,\xi_4}(\bm{q}),
+		\end{equation*}
+		where
+		\begin{equation*}
+			v_{n_1,m_1,\cdots,n_4,m_4}\equiv\frac{2\pi e^2}{\varepsilon |\bm{q}|}\mathcal{F}_{n_1,m_1;n_3,m_3}(-\bm{q})\mathcal{F}_{n_2,m_2;n_2,m_2}(\bm{q})
+		\end{equation*}
+		and the complicated form of $\mathcal{F}_{n,m;n'm'}(\bm{q})$ is found in Appendix A of \cite{goerbig2011electronic}. But fortunately enough, energy scale comparison of Coulomb interaction to that of inter-gap excitation reveals that\footnote{Coulomb interaction can be evaluated by the characteristical length $R_C=\ell_B\sqrt{2n+1}$ by $E\sim\ e^2\varepsilon R_c$, while the Landau Level spacing
+		\begin{equation*}
+			\Delta_n=\sqrt{2}\dfrac{\hbar v_F}{\ell_B}(\sqrt{n+1}-\sqrt{n})\sim.
+		\end{equation*}} inter-LL interaction may be considered frozen, as is shown in 
+		fig.\par
+		General interactive Hamiltonian in our case takes the form of \cite{nomura2006quantum,goerbig2006electron}
+		\begin{equation}\label{0.2.4}
+			H_n=\dfrac{1}{2}\sum_{\bm{q}}v_n(\bm{q})\widetilde{\rho}(\bm{-q})\widetilde{\rho}(\bm{q}),  
+		\end{equation}
+		with the simple effective interaction potential
+		\begin{equation*}
+			v_n(\bm{q})=\dfrac{2\pi e^2}{\varepsilon|\bm{q}|}\mathcal{F}_n^2(\bm{q}),
+		\end{equation*}
+		and the former factors
+		\begin{equation*}
+			\mathcal{F}_n(\bm{q})=\dfrac{1}{2}\left[(1-\delta_{0,n})L_{n-1}\left(\dfrac{q^2\ell_B^2}{2}\right)+(1+\delta_{0,n})L_{n}\left(\dfrac{q^2\ell_B^2}{2}\right)\right]e^{-q^2\ell_B^2/4}.
+		\end{equation*}
+		But since we focus on the lowest LL $n=0$, the projective Coulomb interaction \eqref{0.2.4} reduces to the familiar form\footnote{We always have $L_0(z)=0$ for the zeroth order of Laguerre polynomial.}
+		\begin{equation}\label{0.2.5}
+			H_{\text{int}}=\dfrac{1}{2}\sum_{\bm{q}}\dfrac{2\pi e^2}{\varepsilon|\bm{q}|}\widetilde{\rho}(\bm{-q})\widetilde{\rho}(\bm{q}).
+		\end{equation}
+		Goeribig thought there is no kinetic term in the Hamiltonian for all processes involve merely states within the same LL \cite{goerbig2011electronic}, but we disagree with this claim. 
+\iffalse
+	\section{}
+		\indent\par Attempts of imposing strain on graphene started started from early age. For instance, uniaxial strain is applied to tune the characteristics of Ramann spectrum and open the band grap \cite{ni2008uniaxial,farjam2009comment}. However, it has not aroused much attention until Manes's general revelation of the relation between elastic strain and psuedomagnetic field in monolayer graphene \cite{manes2007symmetry} such that an {\bf arbitrary two-dimensional strain field $u(\bm{r})$ could lead to a pseudo gauge field}
+		\begin{equation}\label{1.1.1}
+			\bm{A}=\dfrac{t\beta}{ev_F}\left(\begin{array}{c}u_{xx}-u_{yy}\\-2u_{xy}\end{array}\right),
+		\end{equation}
+		where $t$ is the nearest-neighbor hopping parameter, $\beta=-\partial\ln t/\partial\ln a$ is the dimensionless coupling parameter discribing lattice deformation. And the following Guinea {\it et al.}'s realization of pseudomagnetic QHE \cite{guinea2010energy} without help of the external magnetic fields but this pseudo one, which share similar picture of quantum spin Hall effect (QSHE) \cite{bernevig2006quantum}, pushed this hot spot to new heights. Through imposing an small triangular symmetric strain to a honeycomb lattice, Guinea {\it et al.} construct with an extremely high but nearly uniform psuedomagnetic fields in the Frist Brillouin Zone and propose an experimental methods to achieve that, which is numerically achieved by Verbiest \cite{verbiest2015uniformity}. And what makes it different from the usual situation when high external magnetic field is applied is that this pseudomagnetic field \emph{flips around the two Dirac point}, $K$ and $K'$.\par
+		In light of the high pseudomagnetic field and adjustable dopping rate, we believe in the existence of FQHE in strined graphene as well. And the property of massless Dirac fermions and opposite directiton of pseudomagnetic field make the electromagnetic response also valuable to study.
+\fi
+	\section{Symmetrical Strain on Graphene}
+		\indent\par Attempts of imposing strain on graphene started started from early age. For instance, uniaxial strain is applied to tune the characteristics of Ramann spectrum and open the band grap \cite{ni2008uniaxial,farjam2009comment}. However, it has not aroused much attention until Manes's general revelation of the relation between elastic strain and psuedomagnetic field in monolayer graphene \cite{manes2007symmetry} such that an {\bf arbitrary two-dimensional strain field $u(\bm{r})$ could lead to a pseudo gauge field}
+		\begin{equation}\label{1.1.1}
+			\bm{A}=\dfrac{t\beta}{ev_F}\left(\begin{array}{c}u_{xx}-u_{yy}\\-2u_{xy}\end{array}\right),
+		\end{equation}
+		where $t$ is the nearest-neighbor hopping parameter, $\beta=-\partial\ln t/\partial\ln a$ is the dimensionless coupling parameter discribing lattice deformation. And the following Guinea {\it et al.}'s realization of pseudomagnetic QHE \cite{guinea2010energy} without help of the external magnetic fields but this pseudo one, which share similar picture of quantum spin Hall effect (QSHE) \cite{bernevig2006quantum}, pushed this hot spot to new heights. Through imposing an small triangular symmetric strain to a honeycomb lattice, Guinea {\it et al.} construct with an extremely high but nearly uniform psuedomagnetic fields in the Frist Brillouin Zone and propose an experimental methods to achieve that, which is numerically achieved by Verbiest \cite{verbiest2015uniformity}. And what makes it different from the usual situation when high external magnetic field is applied is that this pseudomagnetic field \emph{flips around the two Dirac point}, $K$ and $K'$.\par
+		In light of the high pseudomagnetic field and adjustable dopping rate, we believe in the existence of FQHE in strined graphene as well. And the property of massless Dirac fermions and opposite directiton of pseudomagnetic field make the electromagnetic response also valuable to study.
+		
+\chapter{SU(2) Fermionic Chern-Simons Field Theory of Non-relativistic Fermions in Graphene}
+	\section{Discussion on the Effective Hamiltonian}
+		\indent\par 
+		\iffalse
+			To sum up, in our case the free part of the massless Dirac fermion in graphene is now dominated by the second quantized Hamiltonian
+			\begin{equation}\label{1.1.2}
+				H_0=\sum_{\alpha}\sum_{\bm{p}}(\psi_e)_\alpha^\dagger (-1)^\alpha v_F\bm{\sigma}\cdot(\bm{p}+(-1)^\alpha e\bm{A})(\psi_e)_\alpha,
+			\end{equation}
+			where $a=1,2,3,4$ represent the sublattice and valley degenerancy such that the eigenstate is chosen in the order $(\psi_e)_\alpha\equiv\left((\psi_e)_{K\uparrow}, (\psi_e)_{K'\uparrow}, (\psi_e)_{K\downarrow}, (\psi_e)_{K'\downarrow}\right)$. The subscripts $e$ is still introduced to distinguish the field operators of massless Dirac fermions with those of composite Dirac fermions. But the RG flow analysis conducted by Sheely {\it et al.} in \cite{sheehy2007quantum} revealed that, Coulomb interaction also plays a significant role near the quantum cirtical point in graphene. Therefore the whole Hamiltonian takes the form of
+			\begin{equation}\label{1.1.3}
+				H=\sum_{\alpha}\sum_{\bm{p}}(\psi_e)_\alpha^\dagger(-1)^\alpha v_F\bm{\sigma}\cdot(\bm{p}+(-1)^\alpha e\bm{A})(\psi_e)_\alpha+\dfrac{1}{2}\sum_{\alpha,\alpha'}(\psi_e)_\alpha^\dagger(\psi_e)_{\alpha'}^\dagger v(q) (\psi_e)_{\alpha'}(\psi_e)_{\alpha}.
+			\end{equation}
+		\fi
+		Theorefore our system is similar to the same as the non-relativistic bilayer system studied by both Lopez and Fradkin in \cite{lopez1995fermionic,rajaraman1997generalized}. And the second quantized Hamiltonian takes the form of (for convenience of the following computation of electromagnetic response, apart from the external magnetic field $\bm{A}$ appiled, we also write down the probing pseudo-magnetic field $\bm{A'}$ explicitly, which results from the symmetrical strained graphene and thus \emph{alters its direction} for different valley index)
+		\begin{align}\label{2.1.1}
+			H&=\sum_\alpha\int\dd^3x\,(\psi_e)^\dagger_\alpha(x)\dfrac{1}{2m}\left(-i\nabla+e\bm{A}+e\bm{A'}^\alpha\right)^2(\psi_e)_\alpha(x)\nonumber\\
+			&\qquad+\dfrac{1}{2}\sum_{\alpha \beta}\int\dd^3x\dd^3x'\,\delta(\hat{\rho}_e)_\alpha(x)v_{\alpha \beta}(|\bm{x}-\bm{x'}|)\delta(\hat{\rho}_e)_\beta(x'),
+		\end{align}
+		where 
+		\begin{equation*}
+			\bm{A'}^\alpha=\begin{cases}
+				+\bm{A'},&\alpha=\uparrow,\\
+				-\bm{A'},&\alpha=\downarrow,
+			\end{cases}
+		\end{equation*}
+		the fluctuation of charge density $\delta\hat{(\psi_e)}(x)_a\equiv(\psi_e)^\dagger_\alpha(x)(\psi_e)_\alpha(x)-(\bar{\rho}_e)_\alpha(x)$, and the Coulomb interaction $v(|r|)=\frac{e^2}{\varepsilon |r|}$.
+	\section{Introduction of Chern-Simons Fields and K-matrix}
+		\indent\par Similar to the situation in HLR, we take the \emph{singular unitary transformation} $\psi_\alpha\mapsto(\psi_e)_\alpha=U_\alpha(\psi_e)_\alpha$ to transfer our strongly-correlated system to an equivalent one but easy to handle with. And in light of the increase of freedom of our field operator, the unitary operator should be generalized to 
+		\begin{equation}\label{2.2.1}
+			U_\alpha\equiv\exp \left[i\mathcal{K}^{\alpha \beta}\int\dd\bm{r'}\,\mathrm{arg}(\bm{r}-\bm{r'})\rho_\beta(\bm{r'}) \right]
+		\end{equation}
+		in our situation, where the function $\mathrm{arg}(\bm{r}-\bm{r'})\equiv\arctan\frac{y-y'}{x-x'}$ and Einstein's summation rule of repeated greek indices $\alpha,\beta=\uparrow,\downarrow$ is implemented. The $\mathcal{K}$-matrix introduced by Wen and Zee in [???] should take the form of \cite{mandal1996theory}
+		\begin{equation}\label{2.2.2}
+			\mathcal{K}^{\alpha \beta}=\left(\begin{array}{cc}
+				2k_1 & m \\ m & 2k_2
+			\end{array}\right) 
+		\end{equation}
+		since the proof of equivalence proposed by Lopez and Fradkin in \cite{lopez1991fractional} can be safely generalized to higher freedoms.\par
+		Again define the vector fields
+		\begin{equation}\label{2.2.3}
+			e\bm{a}^\alpha(\bm{r})=\mathcal{K}^{\alpha \beta}\int\dd\bm{r'}\,\nabla\mathrm{arg}(\bm{r}-\bm{r'})\rho_\beta(\bm{r'})=\mathcal{K}^{\alpha\beta}\int\dd\bm{r'}\,\dfrac{\varepsilon_{ij}(\bm{r}_i-\bm{r'}_j)}{|\bm{r}-\bm{r'}|}\rho_\beta(\bm{r'}),
+		\end{equation}
+		then clearly the orignal Hamiltonian is equivalent to the system with new Chern-Simons gauge fields $\bm{a}^\alpha$ included\footnote{Note that the singular unitary transformation does not change the form of density operator.}
+		\begin{align}\label{2.2.4}
+			H&=\sum_\alpha\int\dd^3x\,\psi^\dagger_\alpha(x)\dfrac{1}{2m}\left(-i\nabla+e\bm{A}+e\bm{A'}^\alpha-e\bm{a}^\alpha\right)^2\psi_\alpha(x)\nonumber\\
+			&\qquad+\dfrac{1}{2}\sum_{\alpha \beta}\int\dd^3x\dd^3x'\,\delta\hat{\rho}_\alpha(x)v{\alpha \beta}(|\bm{x}-\bm{x'}|)\delta\hat{\rho}_\beta(x').
+		\end{align}
+		So apart from the external magnetic fields we impose before, each electron at position $\bm{r}$ is now attached with several other magentic flux
+		\begin{equation}\label{2.2.5}
+			\bm{B}^\alpha_{\text{CS}}\equiv\nabla\times\bm{a}^\alpha=-\dfrac{2\pi}{e}\mathcal{K}^{\alpha \beta}\rho_\beta(\bm{r}).
+		\end{equation}
+		The accurate number of flux cannot be determined in this theory, but in light of the \emph{Marginal Fermi-liquid} half-filling FQHE state studied by \cite{Halperin1995Theory} in monolayer system, we also believe the existence of Fermi-liquid-like state $\nu=1/2$ in graphene. In HLR's motivation, {\bf the external magnetic field felt by an arbitrary fermion is accurately eliminated by the Chern-Simons magnetic field}, viz
+		\begin{equation}\label{2.2.6}
+			\bm{B}^\alpha_{\text{eff}}\equiv\bm{B}_{\text{ext}}+\bm{B}^\alpha_{\text{CS}}=0.
+		\end{equation}
+		but with a much more suble physical picture here since {\bf the attached flux of electrons in one band will certainly influence the electrons in the other band as well, and vice versa}.\par
+		Duality of two valley degenerancy of graphene, $K$ and $K'$, guarantees that the number of electrons in each freedom is \emph{the same} (and approximately conserved) $N_1=N_2=N/2$ and subject to the same strenght of external magnetic fields, or attach the same number of Chern-Simons magnetic flux to compensate the external magnetic fields. Therefore, it's reasonable to have $\nu_\alpha=\frac{(\rho_e)_{\alpha}S}{BS/\phi_0}=\frac{\nu}{2}=\frac{1}{4}$, which can be realized if the $\mathcal{K}-$matrix is chosen as the \emph{invertible} form
+		\begin{equation}\label{2.2.7}
+			\mathcal{K}^{\alpha \beta}=\left(\begin{array}{cc}
+				\widetilde{\phi}  & \widetilde{\phi}  \\ \widetilde{\phi}  & \widetilde{\phi} 
+			\end{array}\right)
+		\end{equation}
+		with $\widetilde{\phi}=2$. And all the following computation bases on this assuming matrix.
+	\section{Action of Fermionic Chern-Simons Theory}
+		\indent\par After bringing in the Chern-Simons field in $\nu=\frac{1}{2}$ FQHE system, composite fermions subjected to \emph{zero} effective magnetic field are now govened by the new Hamiltonian \eqref{2.2.4} as well as the \emph{constraint conditions} \eqref{2.2.5} and \eqref{2.2.6}, which, are actually the dynamical equation of Chern-Simons field $\bm{a}^\alpha$. And it is because of our choice of invertible $\mathcal{K}-$matrix that leads to the degenerancy of one of the Chern-Simons field  since from \eqref{2.2.5} and \eqref{2.2.6} we always have $\bm{a}^\uparrow\equiv \bm{a}^\downarrow$. And from now on we will omit the valley index of Chern-Simons field, simply writting it as $\bm{a}$ instead.\par
+		Working in \emph{Coulomb gauge}, i.e., $\nabla\cdot \bm{a}=\nabla\cdot\bm{A}=\nabla\cdot\bm{A'}^\alpha=0$, then $a_{||}(p)=A_{||}(p)={A'}^\alpha_{||}(p)=0$ if we decompose them into \emph{transverse} and \emph{longtitudinal} components (write in momentum space)\footnote{By Helmholz theorem (or Hodge Decomposition), any arbitrary field can be decomposed by an irrotational field and a solenoidal field. Coulomb gauge equation $\nabla\cdot\bm{a}=0$ is equivalent to $a_{||}=0$, since in momentum space
+		\begin{equation*}
+			\bm{p}\cdot\bm{a}=\dfrac{p_i p^i}{|\bm{p}|}_{||}+\dfrac{\varepsilon_{ij}p^jp^i}{|\bm{p}|}a_{\perp}=\dfrac{p_i p^i}{|\bm{p}|}a_{||}=0\implies a_{||}=0.
+		\end{equation*}}
+		\begin{equation}\label{2.3.0}
+			a_i(p)\equiv\dfrac{p_i}{|\bm{p}|}a_{||}(p)+\dfrac{\varepsilon_{ij}p^j}{|\bm{p}|} a_{\perp}(p).
+		\end{equation}
+		Certainly gauge fixing could also be done after obtaining the action below, and the standard Fadeev-Popov method in high energy physics is introduced to accomplish this, cf \cite{peskin1995introduction} for details.\par
+		For the future unified treatment of Gaussian fluctuation, it is better to recover the dynamical equation of $\bm{a}$ back into the action such that in coherent state path integral formalism the partition function can be extended to both fermionic fields and Chern-Simons fields (in imaginary time $t\equiv-i\tau$)
+		\begin{align}
+			\mathcal{Z}&=\int \mathcal{D}(\bar{\psi}_\uparrow,\psi_\uparrow)\mathcal{D}(\bar{\psi}_\downarrow,\psi_\downarrow)\,e^{-S[\bar{\psi}_\uparrow,\psi_\uparrow,\bar{\psi}_\downarrow,\psi_\downarrow]}\nonumber\\
+			&=\int\mathcal{D}(\bar{\psi}_\uparrow,\psi_\uparrow)\mathcal{D}(\bar{\psi}_\downarrow,\psi_\downarrow)\mathcal{D}a_{\perp}\,\prod_{\bm{x},\tau}\delta\left(B_{\text{CS}}+\phi_0\widetilde{\phi}(\rho^\uparrow+\rho^\downarrow)\right)\,e^{-S[\bar{\psi}_\uparrow,\psi_\uparrow,\bar{\psi}_\downarrow,\psi_\downarrow,a_\perp]}\nonumber\\
+			&=\mathcal{Z}_0\int\mathcal{D}(\bar{\psi}_\uparrow,\psi_\uparrow)\mathcal{D}(\bar{\psi}_\downarrow,\psi_\downarrow)\mathcal{D}a_0\mathcal{D}a_{\perp}\nonumber\\
+			&\qquad\exp \bigg\{-\int_0^\beta\dd\tau\int\dd\bm{x}\,\left(\dfrac{\varepsilon^{ij}\partial_i a_j}{\phi_0\widetilde{\phi}}+\rho_\uparrow+\rho_\downarrow\right)a_0-S[\bar{\psi}_\uparrow,\psi_\uparrow,\bar{\psi}_\downarrow,\psi_\downarrow,a_\perp]\bigg\}\nonumber\\
+			&=\mathcal{Z}_0\int\mathcal{D}(\bar{\psi}_\uparrow,\psi_\uparrow)\mathcal{D}(\bar{\psi}_\downarrow,\psi_\downarrow)\mathcal{D}a_0\mathcal{D}a_{\perp}\nonumber\\
+			&\qquad\exp \left\{-S_{\text{CF}}[\bar{\psi},\psi,a_0,a_{\perp}]-S_{\text{int}}[\bar{\psi},\psi]-S_{\text{CS}}[a_0,a_{\perp}]\right\},\label{2.3.1}
+		\end{align}
+		where in the first line we insert a functional version of the integral over Dirac delta function\footnote{Taking the concrete definition of path integral into account helps understand this identity as infinite multiplication of usual Lebesgue integral over the generalized function space
+		\begin{equation*}
+			\mathds{1}=\lim_{N\rightarrow \infty}\prod_{k=0}^N\int\dd a_{\perp}(x_k)\,\delta(\varepsilon^{ij} \partial_i a_j(x_k)+\phi_0 \mathcal{K}^{\alpha \beta}\rho_{\beta}(x_k,t_k) ).
+		\end{equation*}}
+		\begin{equation*}
+			\mathds{1}\equiv\int\mathcal{D}a_{\perp}\prod_{\bm{x},\tau}\delta(\varepsilon^{ij}\partial_i a_j+\phi_0\mathcal{K}^{\alpha \beta}\rho_\beta(\bm{x},\tau)),
+		\end{equation*}
+		in the second line we first extract the common factor $\phi_0\widetilde{\mathcal{K}}$, which gives an irrelevant normalization factor $\mathcal{Z}_0$, then perform a \emph{functional version of Fourier Transformation} of Dirac delta function\footnote{The Chern-Simons gauge field we brought in before is just of \emph{two-component}. So this functional Fourier Transformation should be regarded as the \emph{definition} of $a_0$. We write them together just for convenience.} with the dual function donoted as $a_0(\bm{x},\tau)$
+		\begin{equation*}
+			\prod_{\bm{x},\tau}\delta\left(\dfrac{\varepsilon^{ij}\partial_i a_j}{\phi_0 \widetilde{\phi} }+\rho_\uparrow+\rho_\downarrow\right)\equiv\int \mathcal{D}a_0\,\exp \left(-\int_0^\beta\dd\tau\int\dd^2 x\,a_0\left(\dfrac{\varepsilon^{ij}\partial_i a_j}{\phi_0\widetilde{\phi}} +\rho_\uparrow+\rho_\downarrow\right) \right),
+		\end{equation*}
+		and in the third line we re-arrange terms and divide them into three parts
+		\begin{itemize}
+		\item the action of composite fermion 
+			\begin{align}\label{2.3.2}
+				S_{\text{CF}}[\bar{\psi},\psi,a_0,a_{\perp}]&=\sum_\alpha\int_0^\beta\dd\tau\int\dd^2 x\,\bar{\psi}_\alpha\bigg[\partial_\tau+\mu-a_0+\nonumber\\
+				&\qquad\dfrac{1}{2m}(-i\nabla+e\bm{A}+e\bm{A'}^\alpha+e\bm{a})^2\bigg]\psi_\alpha,
+			\end{align}
+		\item the action of interacting composite fermions 
+			\begin{align}\label{2.3.3}
+				S_{\text{int}}[\bar{\psi},\psi]&=\sum_{\alpha \beta}\dfrac{1}{2}\int_0^\beta\dd\tau\dd\tau'\int\dd^2 x\dd^2 x'\nonumber\\
+				&\qquad(\bar{\psi}_\alpha(\bm{x})\bar{\psi}_\alpha(\bm{x})-\bar{\rho}_\alpha)v(\bm{x}-\bm{x'})(\bar{\psi}_\beta(\bm{x'})\psi_\beta(\bm{x})-\bar{\rho}_\beta),
+			\end{align}
+		\item and the action of Chern-Simons field
+			\begin{equation}\label{2.3.4}
+				S_{\text{CS}}[a_0,a_{\perp}]=\dfrac{1}{\phi_0\widetilde{\phi}}\int_0^\beta\dd\tau\int\dd^2 x\,a_0 \varepsilon^{ij}\partial_i a_j.
+			\end{equation}
+		\end{itemize}
+		And by Coulomb gauge we can simplify \eqref{2.3.2} by expanding the parentheses
+		\begin{align}
+			S_{\text{CF}}&=\sum_\alpha\int_0^\beta\dd\tau\int\dd^2x\,\bar{\psi}_\alpha\bigg[\partial_\tau+\mu-a_0-\dfrac{1}{2m}\nabla^2-\dfrac{ie}{2m}\nabla\cdot(\bm{A}+\bm{A'}^\alpha+\bm{a})\nonumber\\
+			&\qquad-\dfrac{ie}{2m}(\bm{A}+\bm{A'}^\alpha+\bm{a})\cdot\nabla+\dfrac{e^2}{2m}(\bm{A}+\bm{A'}^\alpha+\bm{a})^2\bigg]\psi_\alpha\nonumber\\
+			&=\sum_\alpha\int_0^\beta\dd\tau\int\dd^2x\,\bar{\psi}_\alpha\bigg[\mathcal{G}_0^{-1}+\hat{\chi}^\alpha_1+\hat{\chi}^\alpha_2\bigg]\psi_\alpha,\label{2.3.5}
+		\end{align}
+		where
+		\begin{equation*}
+			\hat{\mathcal{G}}_0=\left(\partial_\tau+\mu-\dfrac{1}{2m}\nabla^2\right)^{-1},\quad \hat{\chi}^\alpha_1\equiv -a_0-\dfrac{ie}{m}(\bm{A}+\bm{A'}^\alpha+\bm{a})\cdot\nabla,\quad \hat{\chi}^\alpha_2=\dfrac{e^2}{2m}(\bm{A}+\bm{A'}^\alpha+\bm{a})^2.
+		\end{equation*}
+		Therefore, the partition function can be obtained if we integrate out all freedoms, which are dominated by the above three parts of actions.
+	
+	\section{Mean-field Approximation and Gaussian Fluctuation}
+		\indent\par In this section, we first derive the effection action of gauge field $a_\mu(\bm{x})$ as Lopez and Fradkin them did in \cite{lopez1991fractional}. Subsequently we will expand the effective action to the second order to obtain the Gaussian fluctuation around the mean-field.\par
+		Due to the \emph{quartic} form of Coulomb interaction, an direct integration over fermionic operators to obtain the effective action of Chern-Simons field is not readily possible. In fact, a \emph{Hubbard-Stratonovich Transformation} of density-density channel has to be performed before the integration to reduce the power of fermionic operators. Through introducing an auxiliary bosonic operator and shifting it to eliminate the quartic interaction, we are left with a \emph{quardratic} form of this auxiliary field, which can be integrated out standardly with Gauss integral formula \cite{Stratonovich1957On,hubbard1959calculation,altland2010condensed}.\par
+		However, since the dynamic equation \eqref{2.2.5} and \eqref{2.2.6} exactly connect Chern-Simons field with fermionic field, this standard procedure can be circumvented by simple substitution of $\psi$ with $\bm{a}$, giving
+		\begin{equation}\label{2.4.1}
+			S_{\text{int}}=\dfrac{1}{2}\int\dd^3 x\dd^3 x' \left(\dfrac{\varepsilon^{ij}\partial_i a_j(\bm{x})}{2\widetilde{\phi}\phi_0}-\bar{\rho}\right) v(\bm{x}-\bm{x'})\left(\dfrac{\varepsilon^{k\ell}\partial_k a_\ell(\bm{x'})}{2\widetilde{\phi}\phi_0}-\bar{\rho}\right).
+		\end{equation}
+		\indent Now that the left parts of action in \eqref{2.3.1}, i.e. the action of composite fermions \eqref{2.3.5}, is of quardratic form, then the effective action of bosonic operators can be obtained by integrate out all fermionic freedoms as following
+		\begin{align}
+			S_{\text{CF-eff}}[a_0,a_{\perp}]&=\sum_\alpha\ln\mathrm{det}\left[\hat{\mathcal{G}}_0^{-1}+\hat{\chi}^\alpha_1+\hat{\chi}^\alpha_2\right]=\sum_\alpha\mathrm{tr}\ln\left[\hat{\mathcal{G}}_0^{-1}+\hat{\chi}^\alpha_1+\hat{\chi}^\alpha_2\right]\nonumber\\
+			&=2\mathrm{tr}\left(\ln\hat{\mathcal{G}}_0^{-1}\right)+\sum_\alpha\mathrm{tr}\left(\hat{\mathcal{G}}_0\hat{\chi}^\alpha_1\right)+\sum_\alpha\mathrm{tr}\left(\hat{\mathcal{G}}_0\hat{\chi}^\alpha_2+\dfrac{1}{2}\hat{\mathcal{G}}_0\hat{\chi}^\alpha_1\hat{\mathcal{G}}_0\hat{\chi}^\alpha_1\right)\nonumber\\
+			&\quad+\mathcal{O}(|a_0|^3,|\bm{a}|^3).\label{2.4.2}
+		\end{align}
+		The first term is irrelevant to all bosonic freedoms so can be absorbed in $\mathcal{Z}_0$. The second term also vanishes since we expand around the saddle-point $a_\mu: \bar{a}_\mu\mapsto \bar{a}_\mu+a_\mu$, with $\bar{a}_\mu$ subject to the \emph{mean-field equation} \eqref{2.2.5}
+		\begin{equation}\label{2.4.3}
+			\varepsilon^{ij}\partial_i \bar{a}_j^\alpha=-\dfrac{2\pi}{e}\mathcal{K}^{\alpha \beta}\bar{\rho}_\beta(\bm{x}),
+		\end{equation}
+		which is in conformity with the requirment of a vanishing first variation\footnote{Perturbation must comply with the gauge condition of the Chern-Simons fields. So $a_{||}, A_{||}$ and $A'_{||}$ stay to be zero all the time.}
+		\begin{align*}
+			\dfrac{\delta S}{\delta a_i}\bigg|_{\substack{\bar{a}_0=0\\\varepsilon^{ij}\partial_i\bar{a}_j=-2\phi_0\widetilde{\phi}\bar{\rho}}}&=\dfrac{\delta S_{\text{CF-eff}}}{\delta a_i}+\dfrac{\delta S_{\text{int}}}{\delta a_i}+\dfrac{\delta S_{\text{CS}}}{\delta a_i}\\
+			&=-\dfrac{1}{2}\int\dd^3 x\dd^3 x' \bar{\rho}v(\bm{x}-\bm{x'})\left(\dfrac{\varepsilon^{k\ell}\partial_k \bar{a}_\ell(\bm{x'})}{2\widetilde{\phi}\phi_0}-\bar{\rho}\right)=0.
+		\end{align*}
+		So the first non-trivial term contributing to electromagnetic linear reponse is the second order expansion of \eqref{2.4.2}.\par
+		Given the gauge conditioin \eqref{2.3.0} we chose, it's more convenient to simplify the trace in momentum space instead. So we start with re-expressing the action of composite fermions as following
+		\begin{equation}\label{2.4.4}
+			S_{\text{CF}}=\sum_\alpha\sum_{\bm{q}_1,\omega_n}\sum_{\bm{q}_2,\omega_m}\,\bar{\psi}_{\alpha,q_1}\bigg[(\hat{\mathcal{G}}_0^{-1})_{q_1,q_2}+(\hat{\chi}^\alpha_1)_{q_1,q_2}+(\hat{\chi}^\alpha_2)_{q_1,q_2}\bigg]\psi_{\alpha,q_2},
+		\end{equation} 
+		where\footnote{Results here is straight to verify. The notation $(\hat{\mathcal{G}}_0^{-1})_{q_1,q_2}$ in \eqref{2.4.5a}, for instance, is a conventional notation representing a matrix element in momentum space \cite{altland2010condensed,nagaosa2013quantum}.}
+		\begin{subequations} % label subequations as (15a) (15b)2
+		\begin{align}
+			(\hat{\mathcal{G}}_0^{-1})_{q_1,q_2}&\equiv \mathcal{G}_0^{-1}(\bm{q}_1,i\omega_n)\delta_{\bm{q}_1,\bm{q}_2}\delta_{\omega_n,\omega_m},\label{2.4.5a}\\
+			(\hat{\chi}^\alpha_1)_{q_1,q_2}&\equiv-a_0(q_1-q_2)-\dfrac{e}{m}\bigg(\bm{a}+\bm{A}+\bm{A'}^\alpha\bigg)(q_1-q_2)\cdot \bm{q}_2,\label{2.4.5b}\\
+			(\hat{\chi}^\alpha_2)_{q_1,q_2}&\equiv\dfrac{e^2}{2m}\sum_{q}\bigg(\bm{a}+\bm{A}+\bm{A'}^\alpha\bigg)(q+q_1)\cdot \bigg(\bm{a}+\bm{A}+\bm{A'}^\alpha\bigg)(-q-q_2)\label{2.4.5c}.
+		\end{align}
+		\end{subequations}
+		\indent Still integrating out the fermionic operators and expanding around saddle point, the first part of the trace now can be shown as
+		\begin{align}\label{2.4.6}
+			\mathrm{tr}\left(\hat{\mathcal{G}}_0\hat{\chi}^\alpha_2\right)&=\sum_p(\mathcal{G}_0)_p (\chi^\alpha_2)_{p,p}=\dfrac{e^2}{2m}\sum_{p,q}(\mathcal{G}_0)_p(\bm{a}+\bm{A'}^\alpha)_{p+q}\cdot(\bm{a}+\bm{A'}^\alpha)_{-p-q}\nonumber\\
+			&=\dfrac{e^2}{2m}\sum_{p,q}(\mathcal{G}_0)_p\dfrac{\varepsilon^{ij}(p^i+q^i)}{|\bm{p}+\bm{q}|}(a_{\perp}+{A'}^\alpha_\perp)_{p+q}\dfrac{\varepsilon_{ik}(-p^k-q^k)}{|\bm{p}+\bm{q}|}(a_{\perp}+{A'}^\alpha)_{-p-q}\nonumber\\
+			&=\sum_q(a_{\perp}+{A'}^\alpha_\perp)_{-q}\left(\dfrac{e^2}{2m}\sum_p(\mathcal{G}_0)_p\right)(a_{\perp}+{A'}^\alpha_\perp)_{q}\nonumber\\
+			&=\sum_q(a_{\perp}+{A'}^\alpha_\perp)_{-q}\left(-\dfrac{e^2n_e}{2m}\right)(a_{\perp}+{A'}^\alpha_\perp)_{q},
+		\end{align}
+		where in the last line we shift the integral variable $q$ by $-p$ and substitute the identity
+		\begin{align*}
+			\sum_{\bm{p},\omega_n} \mathcal{G}_0(\bm{p},i\omega_n)&=\lim_{\tau \rightarrow 0}\sum_{\bm{p},\omega_n}e^{-i\omega_n \tau} \mathcal{G}_0(\bm{p},i\omega_n)=\lim_{\tau\rightarrow 0}\sum_{\bm{p}}\mathcal{G}_0(\bm{p},\tau)\equiv\lim_{\tau \rightarrow 0}\sum_{\bm{p}}\langle T_\tau\psi(\bm{p},\tau)\psi^\dagger(\bm{p},\tau)\rangle\nonumber\\
+			&=-\sum_{\bm{p}}\langle\psi^\dagger(\bm{p})\psi(\bm{p})\rangle=-\sum_{\bm{p}}\hat{\rho}(\bm{p})=-n_F(\xi_{\bm{p}}).
+		\end{align*}
+		The second part of the trace is much more tedious
+		\begin{align}
+			\mathrm{tr}\left(\dfrac{1}{2}\hat{\mathcal{G}}_0\hat{\chi}^\alpha_1\hat{\mathcal{G}}_0\hat{\chi}^\alpha_1\right)&=\dfrac{1}{2}\sum_{p,q}(\mathcal{G}_0)_p (a_0+{A'}^\alpha_0)_{p,q} (\mathcal{G}_0)_q (a_0+{A'}^\alpha_0)_{q,p}\nonumber\\
+			&+\dfrac{1}{2}\sum_{p,q}(\mathcal{G}_0)_{p}(a_0+{A'}_0^\alpha)_{p,q}(\mathcal{G}_0)_{q} \left(\dfrac{e}{m}(\bm{a}+\bm{A'}^\alpha)\cdot\bm{p}\right)_{q,p}\nonumber\\
+			&+\dfrac{1}{2}\sum_{p,q}(\mathcal{G}_0)_{p}\left(\dfrac{e}{m}(\bm{a}+\bm{A'}^\alpha)\cdot\bm{p}\right)_{p,q}(\mathcal{G}_0)_{q}(a_0+{A'}^\alpha_0)_{q,p}\nonumber\\
+			&+\dfrac{1}{2}\sum_{p,q}(\mathcal{G}_0)_{p}\left(\dfrac{e}{m}(\bm{a}+\bm{A'}^\alpha)\cdot\bm{p}\right)_{p,q}(\mathcal{G}_0)_{q}\left(\dfrac{e}{m}(\bm{a}+\bm{A'}^\alpha)\cdot\bm{p}\right)_{q,p}\nonumber\\
+			%&=\dfrac{1}{2}\sum_{p,q}(a_0)_{p-q}\cdot(\mathcal{G}_0)_p(\mathcal{G}_0)_q\cdot(a_0)_{q-p}+\dfrac{1}{2}\sum_{p,q}(a_0)_{p-q}\cdot(\mathcal{G}_0)_p (\mathcal{G}_0)_{q}\dfrac{ep_i}{m}\dfrac{\varepsilon^{ij}(q_j-p_j)}{|\bm{q-p}|}\cdot(a_\perp)_{q-p}\nonumber\\
+			%&\qquad+\dfrac{1}{2}\sum_{p,q}(a_\perp)_{p-q}\cdot(\mathcal{G}_0)_p (\mathcal{G}_0)_{q}\dfrac{eq_i}{m}\dfrac{\varepsilon^{ij}(q_j-p_j)}{|\bm{q-p}|}\cdot(a_0)_{q-p}\nonumber\\
+			%&\qquad+\dfrac{1}{2}\sum_{p,q}(a_\perp)_{p-q}\cdot\dfrac{\varepsilon^{ij}(p_j-q_j)}{|\bm{p}-\bm{q}|}\dfrac{ep_i}{m}(\mathcal{G}_0)_{p}(\mathcal{G}_0)_{q}\dfrac{ep_l}{m}\dfrac{\varepsilon^{kl}(p_l-q_l)}{|\bm{p}-\bm{q}|}\cdot(a_\perp)_{q-p}\nonumber\\
+			&=\dfrac{1}{2}\sum_{p,q}(a_0+{A'}^\alpha_0)_{-q}\cdot(\mathcal{G}_0)_p(\mathcal{G}_0)_{p+q}\cdot(a_0+{A'}^\alpha_0)_{q}\nonumber\\
+			&+\dfrac{1}{2}\sum_{p,q}(a_0+{A'}^\alpha_0)_{-q}\cdot(\mathcal{G}_0)_p (\mathcal{G}_0)_{p+q}\dfrac{ep_i}{m}\dfrac{\varepsilon^{ij}q_j}{|\bm{q}|}\cdot(a_\perp+{A'}^\alpha_\perp)_{q}\nonumber\\
+			&+\dfrac{1}{2}\sum_{p,q}(a_\perp+{A'}^\alpha_\perp)_{-q}\cdot(\mathcal{G}_0)_p (\mathcal{G}_0)_{q+p}\dfrac{ep_i}{m}\dfrac{\varepsilon^{ij}q_j}{|\bm{q}|}\cdot(a_0+{A'}^\alpha_0)_{q}\nonumber\\
+			&+\dfrac{1}{2}\sum_{p,q}(a_\perp+{A'}^\alpha_\perp)_{-q}\cdot\dfrac{\varepsilon^{ij}(-q_j)}{|\bm{q}|}\dfrac{ep_i}{m}(\mathcal{G}_0)_{p}(\mathcal{G}_0)_{p+q}\dfrac{ep_l}{m}\dfrac{\varepsilon^{kl}q_l}{|\bm{q}|}\cdot(a_\perp+{A'}^\alpha_\perp)_{q},\label{2.4.7}
+		\end{align}
+		where in the second equal sign we shift the variable $q$ to $q\mapsto p+q$ as well.\par
+		In Halperin {\it et al.}'s work \cite{Halperin1995Theory}, they ignore the off-diagnal terms, viz the second and third terms in \eqref{2.4.7}, under the \emph{Long wave-length limit} $|q|\ll1$, for $(\mathcal{G}_0)_{p+q}(\mathcal{G}_0)_p\sim(\mathcal{G}_0)_p^2$ is even in momentum, cf. Appendix B for a detailed proof. However, such extreme condition makes our derivation lose generality. So instead, we will follow the lengthy derivation of Lopez and Fradkin to obtain the general expression of \emph{polarization tensor} $\Pi^{\mu \nu}$ such that
+		\begin{equation}\label{2.4.6}
+			S_{\text{CF}}=\dfrac{1}{2}\sum_{\alpha=\uparrow,\downarrow}\sum_{\mu,\nu}^{0,1}\sum_{\bm{q},\omega_n}\left(a_\mu+{A'}_\mu^\alpha\right)_{-q}\Pi^{\mu\nu}\left(a_\mu+{A'}_\mu^\alpha\right)_{q},
+		\end{equation}
+		with
+		\begin{equation}\label{2.4.7}
+			\Pi^{\mu\nu}(\bm{q},i\omega_n)\equiv \left(\begin{array}{cc}
+				\displaystyle\sum_p(\mathcal{G}_0)_p(\mathcal{G}_0)_{p+q} & \displaystyle\dfrac{e \varepsilon^{ij} q_j}{m|\bm{q}|}\sum_{p}p_i(\mathcal{G}_0)_p(\mathcal{G}_0)_{p+q}\\
+				\displaystyle\dfrac{e \varepsilon^{ij} q_j}{m|\bm{q}|}\sum_{p}p_i(\mathcal{G}_0)_p(\mathcal{G}_0)_{p+q} & \displaystyle-\dfrac{e^2n_e}{m}+\sum_p\dfrac{e^2p^2}{m^2}(\mathcal{G}_0)_p(\mathcal{G}_0)_{p+q}
+			\end{array}\right),
+		\end{equation}
+		as is shown above. Each martix element of $\Pi^{\mu \nu}$ is discussed under distinct extreme conditions in Appendix B and C. But without loss of generality, here we will utilize the \emph{Kallen Lehmann spectrum decomposition theorem} \cite{abrikosov2012methods,peskin1995introduction} to expand the Green function in basis of Landau wave function and express the polarization tensor by lengthy infinite series.\par
+		Gauge invariance of the effective action results in the transversity of polarization tensor \cite{Fradkin2013Field}, i.e.,
+		\begin{equation}\label{2.4.8}
+			\partial_\mu^x\Pi^{\mu\nu}(x,y)=0.
+		\end{equation}
+		So it is possible to factorize the the polarization tensor into three scalar components, $\Pi^0_\alpha, \Pi^1_\alpha, \Pi^2_\alpha$ \cite{lopez1991fractional,lopez1995fermionic}, reading ($i,j=1,2$ represent $x,y$ component)
+		\begin{subequations}
+		\begin{align}
+			\Pi_\alpha^{00}(\bm{q},\omega)&=-\bm{q}^2\Pi^0_\alpha(\bm{q},\omega),\label{2.4.9a}\\
+			\Pi_\alpha^{0i}(\bm{q},\omega)&=-\omega q^i\Pi^0_\alpha(\bm{q},\omega)+i \varepsilon^{0ij}q_j\Pi^1_\alpha(\bm{q},\omega),\label{2.4.9b}\\
+			\Pi_\alpha^{i0}(\bm{q},\omega)&=-\omega q^i\Pi^0_\alpha(\bm{q},\omega)-i \varepsilon^{0ij}q_j\Pi^1_\alpha(\bm{q},\omega),\label{2.4.9c}\\
+			\Pi_\alpha^{ij}(\bm{q},\omega)&=-\omega^2\delta^{ij}\Pi^0_\alpha(\bm{q},\omega)+i \varepsilon^{0ij}\omega\Pi^1_\alpha(\bm{q},\omega)+(\delta^ij-q^iq^j)\Pi^2_\alpha(\bm{q},\omega),\label{2.4.9d}
+		\end{align}
+		\end{subequations}
+		with the scalar tensor given in the Appendix B of \cite{lopez1991fractional}.
+
+	\section{Electromagnetic Response Tensor and Hall Conductance}
+		\indent\par In order to obtain the electromagnetic response tensor 
+		\begin{equation*}
+			K_{\mu\nu}(x,y):=\frac{\delta^2}{\delta A'_\mu(x)\delta A'_\nu(y)}\ln\mathcal{Z}[\bm{A'}],
+		\end{equation*}
+		we need to integrate out the residue freedom of statistical field $a_\mu$ in the effective action. Ditto for the Fourier transformation we performed in the previous section to expressed the action of composite fermions in an explicit form \eqref{2.4.6}, the same procedure should be applied with other parts of action. We rexpress the action of Chern-Simons field\footnote{The Fourier transfromed Chern-Simons action is symmetrically splitted
+		\begin{align*}
+			\int\dd\tau\int\dd^x\,a_0 \varepsilon^{ij}\partial_i a_j&=\sum_{\bm{p},\omega_n}\sum_{\bm{q},\zeta_n}a_0(\bm{p},i\omega_n)\varepsilon^{ij}p_i a_j(\bm{q},i\zeta_n)\delta(\omega_n+\zeta_n)\delta(\bm{p}+\bm{q})\\
+			&=\dfrac{1}{2}\sum_{\bm{q},\zeta_n}a_0(-\bm{q},-i\zeta_n)\varepsilon^{ij}(-iq_i)a_j(\bm{q},i\zeta_n)+\dfrac{1}{2}\sum_{\bm{p},\omega_n}a_0(\bm{p},i\omega_n)\varepsilon^{ij}ip_ia_j(-\bm{p},-i\omega_n),
+		\end{align*}
+		and the transverse component decomposition of $a_i(q)$ is utilized.} as
+		\begin{align}
+			S_{\text{CS}}&=\dfrac{1}{2}\sum_{\bm{q},\omega_n}\,a_0(-\bm{q},-i\omega_n)\varepsilon^{ij}(-iq_i)\dfrac{\varepsilon_{jk}q^k}{|\bm{q}|}a_{\perp}(\bm{q},i\omega_n)\nonumber\\
+			&\qquad+a_\perp(-\bm{q},-i\omega_n)\varepsilon^{ij}iq_j\dfrac{\varepsilon_{jk}q^k}{|\bm{q}|}a_0(\bm{q},i\omega_n)\nonumber\\
+			&=\dfrac{1}{2}\sum_{\bm{q},\omega_n}\,a_0(-\bm{q},-i\omega_n)\cdot iq\cdot a_{\perp}(\bm{q},i\omega_n)+a_{\perp}(-\bm{q},-i\omega_n)\cdot(-iq)\cdot a_0(\bm{q},i\omega_n)\label{2.5.1}
+		\end{align}
+		and the action of Coulomb interaction\footnote{One should be aware that the sum over momumtum has no term of $\bm{q}=\bm{0}$ for the compensation brought by positive charged background \cite{mahan2013many}.} as
+		\begin{align}	
+			S_{\text{int}}&=\dfrac{1}{2(\widetilde{\phi}\phi_0)^2 }\sum_{\bm{q},\omega_n}\,\varepsilon^{ij}(-i(-q_i)) a_j(-\bm{q},-i\omega_n)v(\bm{q},i\omega_n)\varepsilon^{kl} (-iq_k) a_l(\bm{q},i\omega_n)\nonumber\\
+			&=\dfrac{1}{2(\widetilde{\phi}\phi_0)^2 }\sum_{\bm{q},\omega_n}\,a_{\perp}(-\bm{q},-i\omega_n)\varepsilon^{ij}(-i(-q_i))\dfrac{\varepsilon_{jk}(-q^k)}{|\bm{q}|}\varepsilon^{lm}(-iq_l)\dfrac{\varepsilon_{mn}q^n}{|\bm{q}|}a_{\perp}(\bm{q},i\omega_n)\nonumber\\
+			&=\dfrac{1}{2}\sum_{\bm{q},\omega_n}\,a_{\perp}(-\bm{q},-i\omega_n)\cdot\left(-\dfrac{q^2v(q)}{(\widetilde{\phi}\phi_0)^2}\right)\cdot a_{\perp}(\bm{q},i\omega_n).\label{2.5.2}
+		\end{align}
+		which, in addition to \eqref{2.4.6}, contributes to the effetive action of both stimulant magnetic field ${A'}^\alpha_\mu$ and Chern-Simons field $a_\mu$
+		\begin{align}
+			S_\text{eff}[a_\mu,{A'}^\alpha_\mu]&=\dfrac{1}{2}\sum_{\mu,\nu}^{0,1}\sum_{\bm{q},\omega_n}\left(a_\mu+{A'}_\mu^\uparrow\right)_{-q}\Pi^{\mu\nu}_\uparrow\left(a_\mu+{A'}_\mu^\uparrow\right)_{q}\nonumber\\
+			&+\left(a_\mu+{A'}_\mu^\downarrow\right)_{-q}\Pi^{\mu\nu}_\downarrow\left(a_\mu+{A'}_\mu^\downarrow\right)_{q}+(a_\mu)_{-q}C_{\mu\nu}(a_\nu)_q\nonumber\\
+			&=\dfrac{1}{2}\sum_{\mu,\nu}^{0,1}\sum_{\bm{q},\omega_n}(a_\mu)_{-p}\left(\Pi_{\mu\nu}^\uparrow+\Pi_{\mu\nu}^\downarrow+C_{\mu\nu}\right)(a_\nu)_p+(a_\mu)_{-p}(\Pi_{\mu\nu}^\uparrow-\Pi_{\mu\nu}^\downarrow)(A'_\nu)_p\nonumber\\
+			&+(A'_\mu)_{-p}(\Pi_{\mu\nu}^\uparrow-\Pi_{\mu\nu}^\downarrow)(a_\nu)_p+(A'_\mu)_{-p}(\Pi_{\mu\nu}^\uparrow+\Pi_{\mu\nu}^\downarrow)(A'_\nu)_p\label{2.5.3}.
+		\end{align}
+		After applying the Gaussian integral formula for boson fields\footnote{
+		\begin{equation*}
+			\int\mathcal{D}\varphi\,e^{-\frac{1}{2}\varphi^\dagger a \varphi+\frac{1}{2}\varphi^\dagger b+\frac{1}{2}b^\dagger \varphi}=(2\pi)^{N/2}\mathrm{det}\,a^{-1/2}\,e^{-\frac{1}{2}b^\dagger a^{-1} b},
+		\end{equation*}}, we finally have
+		\begin{align}
+			S_{\text{eff}}[A'_\mu]&=\dfrac{1}{2}\sum_{\mu,\nu}^{0,1}\sum_{\bm{q},\omega_n}-\bigg((\Pi_{\mu\nu}^\uparrow-\Pi_{\mu\nu}^\downarrow)(A'_\mu)_{-p}\bigg)^\dagger\left(\Pi_{\mu\nu}^\uparrow+\Pi_{\mu\nu}^\downarrow+C_{\mu\nu}\right)^{-1}\nonumber\\
+			&\times\bigg((\Pi_{\mu\nu}^\uparrow-\Pi_{\mu\nu}^\downarrow)(A'_\mu)_{-p}\bigg)+(A'_\mu)_{-p}(\Pi_{\mu\nu}^\uparrow+\Pi_{\mu\nu}^\downarrow)(A'_\nu)_p\nonumber\\
+			&=\dfrac{1}{2}\sum_{\mu,\nu}^{0,1}\sum_{\bm{q},\omega_n}\bm{A'}^\dagger\bm{K}\bm{A'},\label{2.5.4}
+		\end{align}
+		where
+		\begin{align}\label{2.5.4}
+			\bm{K}&\equiv-(\bm{\Pi}^\uparrow-\bm{\Pi}^\downarrow)(\bm{\Pi}^\uparrow+\bm{\Pi}^\downarrow+\bm{C})^{-1}(\bm{\Pi}^\uparrow-\bm{\Pi}^\downarrow)+(\bm{\Pi}^\uparrow+\bm{\Pi}^\downarrow)=2\bm{\Pi}
+		\end{align}
+		for $\bm{\Pi}^\uparrow$ has no difference from $\bm{\Pi}^\downarrow$ in our situation.\par
+		As is seen from the results of Appendix B, the polarization tensor tends to be \emph{diagnoal} at the long wave-length limit
+		\begin{equation}\label{2.5.5}
+			\Pi_{\mu\nu}(\bm{q},\omega)=\left(\begin{array}{cc}
+				\dfrac{m}{2\pi}+\mathcal{O}(q^2) & \mathcal{O}(q^2) \\
+				\mathcal{O}(q^2) & -\dfrac{q^2}{12\pi m}+i\dfrac{2n_e\omega}{k_F q}+\mathcal{O}(q^3)
+			\end{array}\right).
+		\end{equation}
+		Thus the static transverse conductance, i.e., the Hall conductance \emph{vanishes} since
+		\begin{equation}
+			\sigma_{xy}\equiv\lim_{\omega\rightarrow0}\lim_{\bm{q}\rightarrow0}K_{01}(\bm{q},\omega)=0,\label{2.5.6}
+		\end{equation}
+		while the longitudinal conductance becomes \emph{twice} the results of Halperin {\it et al.} \cite{Halperin1995Theory}
+		\begin{align}
+			\sigma_{xx}(\bm{q},\omega)&\equiv\dfrac{\omega}{i|\bm{q}|^2}K_{00}(\bm{q},\omega).
+		\end{align}
+
+\chapter{Conclusion And Perspectives}
+	\section{Remarks on Relativistic or Non-relativistic Fermionic Theory}
+	\section{Discussion about K-matrix and Gauge Groups of the Chern-Simons Field}
+	\section{Prospetive Experimental Confirmities}
+
+\appendix
+\chapter{Proof of the General Form of K-matrix}
+\chapter{Validy of Diagonal Polarization Tensor at Long Wave-length Limit}
+	In Halperin {\it et al.}'s paper \cite{Halperin1995Theory}, the polarization tensot $\Pi_{\uparrow,\downarrow}$ is manifestly diagnalized. To see is, we will check that $\Pi^{01}_{\uparrow,\downarrow}$ and $\Pi^{10}_{\uparrow,\downarrow}$ tend to zero more quickly under long wave-length approximation than the corresponding matrix element, Chern-Simons term $\pm iq/\widetilde{\phi}\phi_0$ does. More specifically, we expect the asymtotic property
+	%{\color{ed} I do not know whether Halperin {\it el.} missed the diamagnetic term $\dfrac{-n_e}{m}$ or indeed cancelled it by the through integral	
+	\begin{equation}\label{0.2.1}
+		\Pi^{01}_{\uparrow,\downarrow}(\bm{q},i\omega_m)=\Pi^{10}_{\uparrow,\downarrow}(\bm{q},i\omega_m)=\sum_{p_n}\int\dd p^2\,\dfrac{e\bm{p}}{2m}\dfrac{1}{ip_n-\xi_{\bm{p}}}\dfrac{1}{ip_n+i\omega_m-\xi_{\bm{p+q}}}\sim\mathcal{O}(q^\alpha)
+		%=\int\dd^2p\,\dfrac{e\bm{p}}{2m}\dfrac{n_F(\varepsilon_{\bm{p}})-n_F(\varepsilon_{\bm{p+q}})}{i\omega_m+\xi_{\bm{p}}-\xi_{\bm{p+q}}}
+	\end{equation}
+	Holds for $\alpha>1$. In fact, noting that 
+	\begin{align*}
+		\dfrac{1}{ip_n+i\omega_m-\xi_{\bm{p+q}}}&\sim\dfrac{1}{ip_n+i\omega_m-\bm{p}^2/2m-|\bm{p}||\bm{q}|/m\cos\theta+\mathcal{O}(q^2)}\\
+		&\sim\dfrac{1}{ip_n+i\omega_m-\bm{p}^2/2m}+\dfrac{|\bm{p}||\bm{q}|/m\cos\theta}{(ip_n+i\omega_m-\bm{p}^2/2m)^2}+\mathcal{O}(q^2),
+	\end{align*}
+	we conclude that
+	\begin{equation*}
+		\Pi^{01}_{\uparrow,\downarrow}=\Pi^{10}_{\uparrow,\downarrow}\sim\mathcal{O}(q^2),
+	\end{equation*}
+	so can be dropped out under long wave-length limit for the integrand of the first term is odd in momentum and the integral of angular variable in the second term always give zero.
+\chapter{Evaluation of Polarization Tensor at Extreme Condition}
+\bibliography{bib/hxd}
+%\backmatter
+%\input{chapters/acknowledgements}
+\end{document}
