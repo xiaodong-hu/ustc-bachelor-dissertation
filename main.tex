@@ -13,12 +13,6 @@
 \major{理论物理}
 \supervisor{副教授\ 刘国柱}
 \cosupervisor{副教授\ 吴英海}
-
-%\title{中国科学技术大学\\学位论文模板示例文档}
-%\author{李泽平}
-%\major{数学与应用数学}
-%\supervisor{华罗庚\ 教授}
-%\cosupervisor{钱学森\ 教授}
 % \date{二〇一七年五月一日}    % 注释掉则为今日
 % \professionaltype{专业学位类型}
 % \secrettext{机密\quad 小于等于20年}    % 内部|秘密|机密，注释本行则不保密
@@ -26,8 +20,8 @@
 \entitle{Composite Fermion Liquid\\in Graphene with\\Pseudo-magnetic Field}
 \enauthor{Xiaodong Hu}
 \enmajor{Theoretical Physics}
-\ensupervisor{Prof.\ Guo-Zhu Liu}
-\encosupervisor{Prof.\ Ying-Hai Wu}
+\ensupervisor{Prof. Guo-Zhu Liu}
+\encosupervisor{Prof. Ying-Hai Wu}
 %\ensupervisor{Prof. Luogeng Hua}
 %\encosupervisor{Prof. Xuesen Qian}
 % \endate{May 1, 2017}    % today if commented
@@ -55,12 +49,11 @@
 \begin{acknowledgements}
 	I chrished the final time in USTC and was fortunately being supervised by two teachers during my research on this problem. I appreciated the theoretical guidance of Prof. Guo-Zhu Liu in USTC, without whom I cannot get out of mire when recovering the tedious computation details of HLR's theory during my winter vacation. I benefit a lot from his guidance of functional path integral formalism, which accelarated my understanding of the relevant chapters of Altland\&Simons's book and calculation of the matrix element of polarization tensor. His course \emph{Quantum Many Body Physics} also endowed me a solid foundation on theoretical condensed matter physics. I also appreciated the physical instruction from Prof. Ying-Hai Wu in HUST. Weekly exchanges with him cleared all my vagueness about the physical picture of the $\mathcal{K}$-matrix with high degenerency and multi-layer flux attachment. These discussions also prevented me from the potential deviation from the mainline --- once I naively insisted that we should develop a Fermionic Chern-Simons theory for massless Dirac fermions, it was his distinct demonstration terminated my divergent thoughts and helped me re-focus on our project.\par
 	
-	Besides, academic exchanges and debates with my best friend Zhi-hao Zhang and roommate Shu-xuan Wang also helped me replenish details of the derivation of singular unitary transformation and clarify some sublte concepts about functional mean-fields and spontaneous symmetry breaking. And an anonymous answerer on Chinese Q\&A website {\texttt zhihu} also provide me with some information about half-filling FQHE at frontier. So here I also sincerely express my gratitudes to them.
+	Moreover, frequent academic exchanges with my best friend Zhihao Zhang galvanized a logic derivation to the singular gauge transformation and Chern-Simons action. In fact, apart from my dissertaion, whenever I look back my life in USTC, there was always a figure of him residing in my fragments of memory. I believe our intimate friendship and relation of mutual promotion will extend to the rest of life. Academic debates with my roommate Shu-xuan Wang also helped me clarify some sublte concepts. Frankly, the first time I observed the close relation of functional mean-field methods and spontaneous symmetry breaking happened in the dormitory. An anonymous answerer on Chinese Q\&A website \texttt{zhihu} also provided me with some information about half-filling FQHE at the frontier of research. So here I sincerely express my gratitudes to them as well.
 \end{acknowledgements}
 
 \tableofcontents
 
-%\tableofcontents
 %\listoffigures
 %\listoftables
 %\listofalgorithms
@@ -79,8 +72,7 @@
 \begin{enabstract}
 	We develop an effective theory of unpolarized states in half-filled graphene, studying the electromagnetic response and Hall conductance under the pseudo-magnetic field induced by symmetrical strain on graphene.\par
 
-	In the case of partial filling, when we perform the representation transformation from Wannier function to Landau Level (LL) wave functions, one finds that the valley degenerency coincides with the sublattice degenerency at the low-
-	est LL. So in terms of the form of eigen functions, we can make use of the Hamiltonian of massive particles with parabola dispersion relation to discribe the massless Dirac fermions in graphene. Although the expression of Coulomb interaction becomes extremely complicated after transforamtion of representation for general LL, in the situation what we concern with, where only the lowest LL is occupied, original form of interaction never becomes futile after computation. Thus the only difference of our theory to that of fraction quantum Hall effects (FQHE) in usual semiconductors comes from the more freedoms brought by the valley degenrency.\par
+	In the case of partial filling, when we perform the representation transformation from Wannier function to Landau Level (LL) wave functions, one finds that the valley degenerency coincides with the sublattice degenerency at the lowest LL. So in terms of the form of eigen functions, we can make use of the Hamiltonian of massive particles with parabola dispersion relation to discribe the massless Dirac fermions in graphene. Although the expression of Coulomb interaction becomes extremely complicated after transforamtion of representation for general LL, in the situation what we concern with, where only the lowest LL is occupied, original form of interaction never becomes futile after computation. Thus the only difference of our theory to that of fraction quantum Hall effects (FQHE) in usual semiconductors comes from the more freedoms brought by the valley degenrency.\par
 
 	Based on the fermionic Chern-Simons theory of unpolarized states, we calculate the electromagnetic response tensor under the stimulus of opposite pseudomagnetic field and find that the excitation spectrum, whatever gapped FQHE states or gapless one, concides with that of ususal partially filled FQHE. But our special stimulus makes the longitudinal reponse double and the static transverse conductance vanish. The effectiveness of our theory can be confirmed by the accurate surface acoustic wave experiments.  
 
@@ -89,13 +81,33 @@
 
 
 \mainmatter
-%\input{chapters/intro}
-%\input{chapters/math}
-%\input{chapters/floats}
-%\input{chapters/citations}
+
 \chapter{Introduction}
-	\section{Historical Development of Fractional Quantum Hall Effect}
-	\section{Graphene in Strong Magnetic Field: Relativistic or Non-relativistic}
+	\section{Historical Review of Experimental Results}
+		\indent\par The integer quantum hall effect (IQHE) was first observed in two-dimensional electron gas (2DEG) electrostatically induced by metallic gate valtage on Silicon MOSFET or by modulation dopped GaAs-AlGaAs heterostructure by von Klitzing \cite{klitzing1980new,von1986quantized,comtet2000aspects}. Stark contrast is observed on the stepwise dependence on strong magnetic field, as compared to a linear dependence as in classical Hall effect. Those step Hall resistances, or plateaus, quantized with extreme high resolution as $\frac{h}{ne^2}$ with an \emph{integer} $n$, while the corresponding longitudinal resistance drops sharply to zero in the meanwhile. The high resolution even made quantum Hall effect (QHE) as the resistance calibration standard since 1990.\par
+
+		Two years after the first observation of IQHE, fractoinal quantum Hall effect (FQHE) was discovered by Tsui, Stormer and Gossard \cite{tsui1982two,stormer1999fractional} in a much lower temperature and higer magnetic fields enivronment on a higher mobility 2DEG of Si-dopped GaAs-AlGaAs heterojunctions. FQHE possesses an analogous characteristic as QHE, except that the quantized Hall resistance is $\frac{h}{e^2}$ divided by a \emph{fraction}. The first observed fraction is $\nu=1/3$ and about $100$ fractional quantum Hall states have been observed so far \cite{laughlin1983anomalous}. Most of these fractions are of odd denominator, but the existence of even denominator FQHE states like $\nu=1/2,5/2$ aroused huge theoretical interests in this field.\par
+		%Other non FQH states, like marginal Fermi liquid state $1/4,1/2$ and stripe state , also arouse huge interests.
+		
+		Regarless how the 2DEG is formed, Berry phase and impurity-induced localization \cite{von1986quantized,tong2016lectures} are widely accepted as the cause of IQHE\footnote{TKNN theory \cite{tong2016lectures} also provide one explanation of IQHE.}, and interplay of kinetic energy and interaction results in FQHE \cite{simon1998chern}. So besides the familiar heterostructures like Si-MOSEFT or dopped GaAs-AlGaAs, Graphene and other two-dimensional materials are also believed to host IQHE and FQHE. And experimentalists did find a slightly distinct quantized Hall conductance in graphene \cite{zhang2005experimental} that $\sigma_{xy}=\pm4(n+\frac{1}{2})\frac{e^2}{h}$. The factor $4$ comes from the spin degenerency and valley degenerency of graphene, and the extra translation $\frac{1}{2}$ can be explained by Berry phase or relativistic Dirac equation \cite{sarma2011electronic}.\par
+
+		FQHE in graphene was also found four year latter in a suspended graphene with high mobility comparable to some good quality 2DEG in GaAs-AlGaAs heterostructure in \cite{du2009fractional,dean2011multicomponent}. Both groups of Du {\it et al.} and Dean {\it el al.} merely found odd denominator fraction states. But in 2014, even denominator states are also observed in suspended graphene \cite{ki2014observation}. Therefore, motivated by rich physics hidden in even denominator FQHE in GaAs, it's valuable to study the electromagnetic tranports in graphene with even denominator Landau Level (LL) filling factors as well, particularly, we concentrate on the case of $\nu=1/2$ in this paper.
+
+	\section{Composite Fermions and Chern-Simons Theory}
+		\indent\par The concept of \emph{composite fermion} stem from the Jain's famous paper in 1989, in which a mapping between the wave functions of IQHE states and approximate --- but extremely good --- wavefunctions for FQHE states is keenly pointed out \cite{jain1989composite}. This wave function mapping can be regared as attaching an \emph{even} number of vortices of the wave function to each electron, turning it into a ``composite'' fermion.\par
+
+		Although the idea of composite fermion suffered some resistance from the theoretical community at first, its validity was gradually accepted and the idea was further developed by many groups. S.C. Zhang {\it et al.} shot to fame with their model of bosonic Chern-Simons theory, in which \emph{odd} number of flux is attached and incompressible excitation of FQHE states are explained by the Ginzberg-Landau theory of symmetry breaking \cite{zhang1989effective}. Approaches of fractional statistics and Chern-Simons field also culminate the field of anyon superconductivity \cite{wilczek1990fractional,chen1989anyon} for a time.
+
+		\subsection{Single-layer Fermion Chern-Simons Theory}
+		\indent\par The fermionic Chern-Simons field theory proposed by Lopez and Fradkin in \cite{lopez1991fractional} comes to epitomize the development of field theory formalism on FQHE, providing a systematic (or at least semi-systematic) perturbation calculations of quantities such as longitudinal and transverse conductivities that are experimentally measurable. And formal study of the relation of wave function of ground state with the generating function of green function at equal time in \cite{fradkin1993wave} enable Fradkin to bridge the field theory formalism to Jain's trial series of incompressible FQHE wave functions. Shortly thereafter, the half-filling state is also well described by Halperin, Lee, and Read's famous work \cite{Halperin1995Theory} (known as HLR) with this approach, surprisingly indicating that unlike incompressible FQHE states with odd denominators, the even denominator states like $\nu=\frac{1}{2},\frac{1}{4}$ are rather compressible and Fermi-liquid-like\footnote{More precisely, the behavoir of \emph{infrared divergence} of the effective mass of composite fermions \cite{stern1995singularities} reveals that even denominator states are \emph{marginal Fermi liquid}. But theoretical framework of normal Fermi liquid aptly fit the physical picture of this system with just a slight but reasonable modification of the model.}.
+		%Though effective enough on odd fraction quantized Hall conductance, S.C. Zhang's theory cannot interpret the whole hierachical structure of FQHE, neither can it  a field theoretical formalism was developed that roughly corresponded to Jain’s composite fermion wavefunction approach 13 – 15 . In these Chern-Simons approach, electrons is modeled as fermions bound to an even number of fictitious flux quanta which in some sense represent the even number of vortices of Jain’s composite fermion. The great advantage of this Chern-Simons approach is that it allows for simple yet systematic (or at least semi-systematic) calculations of quantities such as conductivities that are measurable experimentally.\par
+	\subsection{Multi-layer Fermionic Chern-Simons Theory}
+		\indent\par A richer variety of states will emerge if more freedoms is added in Fermionic Chern-Simons theory. And two obvious possibilities that can be described by this theory are systems in which the spin freedom is no longer frozen by Zeemann effect and the multi-layer 2DEG coupled together. For example, it is Haldane and Rezayi's celebrated spin unpolarized states \cite{haldane1988spin} that helped in describing the unconventional $\nu=5/2$ FQHE state observed in experiments\footnote{Haldane and Rezayi's unpolarized states was proven to be an asymptotic state in the vicinity of the critical point of phase transition with gapless excitation in the bulk \cite{read2000paired}, while the Pfaffian states proposed by Moore and Read in \cite{moore1991nonabelions} aptly matches the weak-pairing phase in \cite{read2000paired} as was numerically support by \cite{morf1998transition}.}, which once cast doubt on Fermionic Chern-Simons Theory that predicts FQHE states with only odd denominators $\nu=\frac{p}{2np+1}$.\par
+		The interplay of intra-layer and inter-layer Coulomb interaction give rise to more interesting physics. Half-filled FQHE has already been observed in double layer electron system in \cite{suen1992observation}, but is proven to be a compressible Fermi liquid state for a single layer in theoretical constructions \cite{stern1995singularities} and in energy gaps determination of prominent sequences of FQHE states \cite{du1993experimental} at filling factor $\nu=p/(2p\pm1)$ around $\nu=1/2$.
+		%Numerical results suggest that 5/2 FQH state is spin polarized and support Pfaffian state or anti-Pfaffian state [69,72,77,80,82]. Therefore, efforts have been made to measure the spin polarization at 5/2, mostly through tilted field technique. In tilted field measurement, the Hall properties refer to perpendicular magnetic field while the Zeeman energy refers to the total magnetic field, so a spin polarized state will not be affected by the tilted field while a spin unpolarized state may respond to the tilted field. The first 5/2 tilted field experiment was done by Eisenstein in 1988 [122] and the study concluded that 5/2 is not spin polarized. More titled experiments were carried out during the last decade after more theoretical support for the Pfaffian and anti-Pfaffian, but the results were too complicated to be explained only in language of spin polarization [103,123-129]. The above titled experimental results imply that 5/2 state under the influence of in plane field needs to take more into consideration than just the Zeeman energy. Furthermore, a numerical study argues that 5/2 from Moore-Read state can lead to depolarized ground state in realistic experimental situations because of Skyrmions [130].
+
+	\section{Graphene in Strong Magnetic Field}
+	\subsection{Relativistic or Non-relativistic}
 		\indent\par The electronic properties of Graphene is well discribed by the tight binding model \cite{altland2010condensed}, in which only nearest neighborhood hopping interaction is considered. Each of the six corner of the hexagonal Brillouin zone protect the time-reversal symmetry [???], but only two of these doubles are inequivalent ones, giving rise to the two-fold pseudospin degenerancy $\xi=\pm$. Given the celebrated Hamiltonian of graphene in the continuum limit, one can directly write down the Hamiltonian of free Dirac fermions in a strong magnetic field $\bm{B}$ by simple minimal-coupling principle\footnote{The mininal-coupling principle in tight binding model is called \emph{Peierls substitution} \cite{goerbig2011electronic}. Unlike the usual continuous situation, Peierls substitution holds only if the lattice constant $a$ is much smaller than the \emph{characteristic magnetic length} $\ell_B\equiv\sqrt{\frac{\hbar}{eB}}$. And because $a=0.24\mathrm{nm}$ and $\ell_B\sim26\mathrm{nm}/\sqrt{B[\mathrm{T}]}$, this condition is fullfilled in graphene for strong magnetic fields.} 
 		\begin{equation}\label{0.2.1}
 			H^\xi_B=\xi v_F\left(\begin{array}{cc}
@@ -125,7 +137,9 @@
 		\end{equation*}
 		where $z=x-iy$ and $L_n^m(z)$ is the Laguerre polynomials.\par
 		Recall that the column of spinors \eqref{0.2.3} represents the two sublattice freedoms. So the distinctive form of $n=0$ LL wave function, in which one column is always zero, indicates that the valley degenerancy coincides with the sublattice freedoms at the lowest LL, and the two sublattice, $B$ sublattice in the $K'$-valley while $A$ sublattice in the $K$-valley, decouple at zero energy. That is, {\bf the effective theory for \emph{free massless Dirac fermions} constrained at the Lowest LL takes exaclt the same form of \emph{non-relativistic} case but with an extra two-fold pseudospin degenerancy}\footnote{The ambient magnetic field is strong enough to split the energy spectrum into two \emph{nonoverlapping} groups due to Zeemann effects, so we ignore the real spin freedoms of Fermions.}, whose fermionic field operator are denoted as $(\psi_e)_\alpha$ for $\alpha=\uparrow,\downarrow$. Similar to transforming the fields operators from Bloch representation to Wannier representation in Hubburd model \cite{nagaosa1999quantum}, the procedure we does above is actually {\bf projecting the free Hamiltonian of original field operator to a new basis of LL wave functions}.\par
-		However, apart from the free parts of Hamiltonian, motivated by the mechanism of Fermionic Chern-Simons theory in GaAs, Coulomb interaction must play a cruicial role in formation of incompressible FQHE states obseved in graphene \cite{bolotin2009observation}, without which the hierachical structure of fraction Hall conductance cannot be consistently explained \cite{simon1998chern,lopez1991fractional}. After decomposing the density operator $\rho^{\xi}_{n,m}(\bm{q})\equiv\psi$ in the basis of spinor wave functions \eqref{0.2.3}
+	
+	\subsection{Coulomb Interaction on Lowest LL}
+		\indent\par However, apart from the free parts of Hamiltonian, motivated by the mechanism of Fermionic Chern-Simons theory in GaAs, Coulomb interaction must play a cruicial role in formation of incompressible FQHE states obseved in graphene \cite{bolotin2009observation}, without which the hierachical structure of fraction Hall conductance cannot be consistently explained \cite{simon1998chern,lopez1991fractional}. After decomposing the density operator $\rho^{\xi}_{n,m}(\bm{q})\equiv\psi$ in the basis of spinor wave functions \eqref{0.2.3}
 		\begin{equation*}
 			\rho^{\xi}_{n,m}(\bm{q})=\sum_{n,m,n',m'}\mathcal{F}_{n,m;n'm'}\widetilde{\rho}^{\xi',\xi}_{n,m;n'm'}(\bm{q}),
 		\end{equation*}
@@ -141,7 +155,14 @@
 		\begin{equation*}
 			\Delta_n=\sqrt{2}\dfrac{\hbar v_F}{\ell_B}(\sqrt{n+1}-\sqrt{n})\sim.
 		\end{equation*}} inter-LL interaction may be considered frozen, as is shown in 
-		fig.\par
+		Fig. \ref{fig:1}.
+		\begin{figure}[!htp]
+			\centering
+			\includegraphics[scale=1.1]{LL.pdf}
+			\caption{{\bf Comparison of the Filled and Partially Filled LL}. The \emph{inter-LL} excitation is preferred in the left subgraph due to the Pauli exclusion principle of filled LL, while is suppressed in the right subgraph of partiall filled LL for the higher energy scale of LL seperation comparing with intra-LL interaction.}
+			\label{fig:1}
+		\end{figure}
+		 
 		General interactive Hamiltonian in our case takes the form of \cite{nomura2006quantum,goerbig2006electron}
 		\begin{equation}\label{0.2.4}
 			H_n=\dfrac{1}{2}\sum_{\bm{q}}v_n(\bm{q})\widetilde{\rho}(\bm{-q})\widetilde{\rho}(\bm{q}),  
@@ -470,8 +491,228 @@
 		\Pi^{01}_{\uparrow,\downarrow}=\Pi^{10}_{\uparrow,\downarrow}\sim\mathcal{O}(q^2),
 	\end{equation*}
 	so can be dropped out under long wave-length limit for the integrand of the first term is odd in momentum and the integral of angular variable in the second term always give zero.
-\chapter{Evaluation of Polarization Tensor at Extreme Condition}
+\chapter{Evaluation of Polarization Tensor under Extreme Circumstances}
+	In this section, we review in detail the derivation of matrix elements of $K$ for future use. Since FQHE experiments are performed under extreme low temperature, we direct integral in zero temperature limit (return to \emph{real-time} form\footnote{Note the slight differences on definition of Green function of real-time and imaginary time:
+	\begin{equation*}
+		\mathcal{G}(p,\tau;p',\tau'):=-\langle T_\tau a_p(\tau) a_{p'}^\dagger(\tau')\rangle,\quad G(p,t;p',t')=(-i)\langle Ta_p(t) a_{p'}^\dagger(t')\rangle.
+	\end{equation*}
+	So appropriate times of $i$ should be added when transforming self-energy from imaginary time to real time.}).\par
+	We start from considering the integral
+	\begin{equation*}
+		K^0_{00}(\bm{q},\omega)=i\int\dfrac{\dd E\dd^2p}{(2\pi)^3}\dfrac{1}{E-\xi_{\bm{p}}+i\delta_{\bm{p}}}\dfrac{1}{E+\omega-\xi_{\bm{p+q}}+i\delta_{\bm{p+q}}}.
+	\end{equation*}
+	Obviously only when two singularities are placed on the opposite sides of half plane can we obtain a non-vanishing value (otherwise we can always choose the semi-circle enclosing no singularity as the integral contour). There are two cases:
+	\begin{align*}
+		E_1&=\xi_{\bm{p}}+i\delta,\quad\xi_{\bm{p}}<0;\quad	E_2=\xi_{\bm{p+q}}-\omega-i\delta,\quad\xi_{\bm{p+q}}>0;\\
+		E_1&=\xi_{\bm{p}}-i\delta,\quad\xi_{\bm{p}}>0;\quad E_2'=\xi_{\bm{p+q}}-\omega+i\delta,\quad\xi_{\bm{p+q}}<0.
+	\end{align*}
+	Hence by Cauchy theorem, we have
+	\begin{align}
+		K^0_{00}(\bm{q},\omega)&=i\int\dfrac{\dd^2p}{(2\pi)^3}(2\pi i)\bigg(\mathrm{Res}(E_1)+(-1)\mathrm{Res}(E_1')\bigg)\nonumber\\
+		&=\int_{\xi_{\bm{p}}<0,\xi_{\bm{p+q}}>0}\dfrac{1}{\xi_{\bm{p}}+\omega-\xi_{\bm{p+q}}+i\delta}\dfrac{\dd^2p}{(2\pi)^2}-\int_{\xi_{\bm{p}}>0,\xi_{\bm{p+q}}<0}\dfrac{1}{\xi_{\bm{p}}+\omega-\xi_{\bm{p+q}}-i\delta}\dfrac{\dd^2p}{(2\pi)^2},\label{3.2.1}
+	\end{align}
+	where for the first case we choose the lower semi-circle while for the second case we choose the upper one.
+	\subsubsection{Static Limit $\omega=0$}
+		We first consider the response function at zero frequency $K(\bm{q},0)$ with long wave-lenght limit $|\bm{q}|$
+		\begin{equation}\label{3.2.2}
+			K^0_{00}(\bm{q},0)=\int_{\xi_{\bm{p}}<0}\dfrac{1}{\xi_{\bm{p}}-\xi_{\bm{p+q}}+i\delta}\dfrac{\dd^2p}{(2\pi)^2}-\int_{\xi_{\bm{p}}>0}\dfrac{1}{\xi_{\bm{p}}-\xi_{\bm{p+q}}-i\delta}\dfrac{\dd^2p}{(2\pi)^2}.
+		\end{equation}
+		By Sokhotsky-Wiestrass formula\footnote{$\dfrac{1}{x\pm i\delta}=\mathcal{P}\dfrac{1}{x}\mp i\pi\delta(x)$.}, density-density response function can be obtained through obtaining the real part and imaginary part seperately
+		\begin{equation*}
+			K^0_{00}(\bm{q},0)=\Re K^0_{00}+i\Im K^0_{00}.
+		\end{equation*}
+		However, clearly imaginary part of $K^0_{00}$ vanishes since both integral conditions can be equaly transformed to
+		\begin{align*}
+			\xi_{\bm{p}}&<0\bigcap\xi_{\bm{p+q}}>0\implies\dfrac{pq}{m}\cos\theta+\dfrac{q^2}{2m}>\mu-\dfrac{p^2}{2m}>0,\\
+			\xi_{\bm{p}}&>0\bigcap\xi_{\bm{p+q}}<0\implies\dfrac{pq}{m}\cos\theta+\dfrac{q^2}{2m}<\mu-\dfrac{p^2}{2m}<0
+		\end{align*}
+		so that
+		\begin{equation*}
+			\Im K^0_{00}(\bm{q},0)=\int_{\frac{pq}{m}\cos\theta+\frac{q^2}{2m}>0}\dfrac{\dd^2p}{(2\pi)^2}\,\pi\times\delta\left(\dfrac{pq}{m}\cos\theta+\dfrac{q^2}{2m}\right)-\int_{\frac{pq}{m}\cos\theta+\frac{q^2}{2m}<0}\dfrac{\dd^2p}{(2\pi)^2}\,\pi\times\delta\left(\dfrac{pq}{m}\cos\theta+\dfrac{q^2}{2m}\right)\equiv 0.
+		\end{equation*}
+		As for the real part,
+		\begin{align*}
+			\Re K^0_{00}(\bm{q},0)&=\mathcal{P}\int\dfrac{n_F(\xi_{\bm{p}})(1-n_F(\xi_{\bm{p+q}}))}{\xi_{\bm{p}}-\xi_{\bm{p+q}}}-\dfrac{n_F(\xi_{\bm{p+q}})(1-n_F(\xi_{\bm{p}}))}{\xi_{\bm{p}}-\xi_{\bm{p+q}}}\dfrac{\dd^2 p}{(2\pi)^2}=\int\left(\dfrac{n_F(\xi_{\bm{p}})}{\xi_{p}-\xi_{\bm{p+q}}}-\dfrac{n_F(\xi_{\bm{p+q}})}{\xi_{p}-\xi_{\bm{p+q}}}\right)\dfrac{\dd^2 p}{(2\pi)^2}\\
+			&=\int\left(\dfrac{n_F(\xi_{\bm{p}})}{\xi_{p}-\xi_{p+q}}-\dfrac{n_F(\xi_{\bm{p}})}{\xi_{p-q}-\xi_{p}}\right)\dfrac{\dd^2 p}{(2\pi)^2}\equiv\int_{p<p_F}\dfrac{-1}{\dfrac{pq}{m}\cos\theta+\dfrac{q^2}{2m}}-\dfrac{1}{\dfrac{q^2}{2m}-\dfrac{pq}{m}\cos\theta}\dfrac{\dd^2p}{(2\pi)^2}\\
+			&=\int_{p<p_F}\dfrac{4m}{q^2-4p^2\cos^2\theta}\dfrac{\dd^2 p}{(2\pi)^2},
+		\end{align*}
+		where in the first line we introduce the Fermion-Dirac distribution $n_F(\xi_{\bm{p}})\equiv\varTheta(\frac{p2}{2m}-\mu)$ to re-express the confinement on integral variables, and in the second line we shift the dummy varaible $\bm{p}$ to $\bm{p-q}$ to unify the integral domain for convenience.\par
+		Since no constraint is imposed on the angle variable, integral of $\theta$ should be done directly, which naturally brings in another confinement $p<\frac q 2$ since we only concern about the real part of the integral. However, in our case fluctuation of Chern-Simons fields is thought to be faint $q\ll p_F$ so the upper limit of momentum should be replaced with $\frac q 2$ such that
+		\begin{equation}\label{3.2.3}
+			\Re K^0_{00}(\bm{q},0)=\dfrac{m}{\pi^2}\int_{p<\frac q 2}p\dd p\int_0^{2\pi}\dfrac{\dd\theta}{q^2-4p^2\cos^2\theta}=\dfrac{2m}{\pi q}\int_{p<\frac q 2}\dfrac{p\dd p}{\sqrt{q^2-4p^2}}=\dfrac{m}{2\pi},
+		\end{equation}
+		
+		\hrule
+		\vspace{2pt}
+		\hrule
+		\vspace{1em}
+
+		Similar procedure is applied to the transverse response function $K^0_{11}(\bm{q},0)$:
+		\begin{equation}\label{3.2.4}
+			\Re K^0_{11}(\bm{q},0)=\dfrac{m}{\pi^2}\int_{p<\frac q 2}p\dd p\int_0^{2\pi}\dfrac{e^2p^2}{m^2}\dfrac{\dd\theta}{q^2-4p^2\cos^2\theta}=\dfrac{2e^2}{\pi mq}\int_{p<\frac q 2}\dfrac{p^3\dd p}{\sqrt{q^2-4p^2}}=-\dfrac{e^2 q^2}{12\pi m}.
+		\end{equation}
+	\subsubsection{Low Frequency Limit $\omega\ll qp_F/m$}
+		Thought more complicated, it's more valuable to acquire the explicit expression at both small momentum and small frequency, and in this subsection we will figure out them.\par
+		Re-expressing the confinements on integral domain of \eqref{3.2.1} by Fermi-Dirac distribution as above, we have
+		\begin{equation}\label{3.2.4}
+			K^0_{11}=\int\dfrac{n_F(\xi_{\bm{p}})(1-n_F(\xi_{\bm{p+q}}))}{\omega+\xi_{\bm{p}}-\xi_{\bm{p+q}}+i\delta}-\dfrac{(1-n_F(\xi_{\bm{p}}))n_F(\xi_{\bm{p+q}})}{\omega+\xi_{\bm{p}}-\xi_{\bm{p+q}}-i\delta}\dfrac{\dd^2 p}{(2\pi)^2}.
+		\end{equation}
+		Again by Sokhotski-Wiestrass formula, 
+		\begin{equation*}
+			K^0_{00}=\Re K^0_{00}+\Im K^0_{00},
+		\end{equation*}
+		with this time both real parts and imaginary part not vanishing.
+		\begin{itemize}
+			\item {\bf Real Parts of Density-density Response.}
+				\begin{align}
+					\Re K^0_{00}&=\mathcal{P}\int\dfrac{n_F(\xi_{\bm{p}})(1-n_F(\xi_{\bm{p+q}}))}{\omega+\xi_{\bm{p}}-\xi_{\bm{p+q}}}-\dfrac{(1-n_F(\xi_{\bm{p}}))n_F(\xi_{\bm{p+q}})}{\omega+\xi_{\bm{p}}-\xi_{\bm{p+q}}}\dfrac{\dd^2 p}{(2\pi)^2}\nonumber\\
+					&=\mathcal{P}\int\dfrac{n_F(\xi_{\bm{p}})}{\omega+\xi_{\bm{p}}-\xi_{\bm{p+q}}}-\dfrac{n_F(\xi_{\bm{p+q}})}{\omega+\xi_{\bm{p}}-\xi_{\bm{p+q}}}\dfrac{\dd^2 p}{(2\pi)^2}\nonumber\\
+					&=\mathcal{P}\int\dfrac{n_F(\xi_{\bm{p}})}{\omega+\xi_{\bm{p}}-\xi_{\bm{p+q}}}-\dfrac{n_F(\xi_{\bm{p}})}{\omega+\xi_{\bm{p-q}}-\xi_{\bm{p}}}\dfrac{\dd^2 p}{(2\pi)^2}\equiv\Re (K^0_{00})^{-}-\Re(K^0_{00})^+,\label{3.2.5}
+					%=\mathcal{P}\int_{p<p_F}\dfrac{4mq^2}{4\left(m\omega-pq\cos\theta\right)^2-q^4}\dfrac{\dd^2p}{(2\pi)^2}
+				\end{align}
+				where
+				\begin{align*}
+					\Re (K^0_{00})^{\pm}&=\mathcal{P}\int_{p<p_F}\dfrac{2m}{2m\omega\pm q^2-2pq\cos\theta}\dfrac{\dd^2p}{(2\pi)^2}.
+				\end{align*}
+				Likewise, since no confinement is imposed on angle variable, we can direct obtain (denoting $q^2_{\pm}\equiv 2m\omega\pm q^2$)
+				\begin{equation*}
+					\Re (K^0_{00})^{\pm}=\dfrac{m}{2\pi^2}\int_{p<p_F}p\dd p\int_0^{2\pi}\dfrac{\dd\theta}{q^2_\pm-2p q\cos\theta}=\dfrac{m}{\pi}\int_{p<pF, p<\left|q_{\pm}^2\right|/2q}\dfrac{p\mathop{\rm sgn}(q_{\pm}^2)}{\sqrt{|q_{\pm}^2|^2-4p^2q^2}}\dd p.
+				\end{equation*}
+				For our case $|\bm{q}|\ll p_F, \omega\ll\frac{q p_F}{m}$ the confinement on integral domain can be unified as the simple $p<\frac{|q_{\pm}^2|}{2q}$ since
+				\begin{equation*}
+					q\ll p_F\bigcap\dfrac{m\omega}{q}\ll p_F\implies\dfrac{|q_{\pm}^2|}{2q}=\left|\dfrac{m\omega}{q}\pm\dfrac{q}{2}\right|\ll p_F.
+				\end{equation*}
+				So
+				\begin{equation}\label{3.2.6}
+					\Re (K^0_{00})^{\pm}=\dfrac{m}{\pi}\int_{p<\left|q_{\pm}^2\right|/2q}\dfrac{p\mathop{\rm sgn}(q_{\pm}^2)}{\sqrt{|q_{\pm}^2|^2-4p^2q^2}}\dd p=\dfrac{mq_{\pm}^2}{4\pi q^2},
+				\end{equation}
+				and by \eqref{3.2.5} we finally get\footnote{Obviously this result is \emph{accurate with no approximation}, so the series expansion (2.10) in Halperin {\it et al.}'s work is to some extent wrong.}
+				\begin{equation}\label{3.2.7}
+					\Re K^0_{00}(\bm{q},\omega)=\dfrac{m}{4\pi q^2}\bigg(2m\omega-q^2-2m\omega-q^2\bigg)=\dfrac{m}{2\pi},
+				\end{equation}
+				which is in accordance with the results under static limit we obtained before.
+				\vspace{1em}
+				\hrule
+				\vspace{2pt}
+				\hrule
+				\vspace{1em}
+				Likewise, with slight changes we can direct write down the final intergal of the real part of the current-current correltation function
+				\begin{equation}
+					\Re (K^0_{11})^{\pm}=\dfrac{m}{\pi}\int_{p<\left|q_{\pm}^2\right|/2q}\dfrac{e^2p^2}{m^2}\dfrac{p\mathop{\rm sgn}(q_{\pm}^2)}{\sqrt{|q_{\pm}|^2-4p^2q^2}}\dd p=\dfrac{q_{\pm}^6}{24\pi mq^4},\label{3.2.8}
+				\end{equation}
+				so
+				\begin{equation}\label{3.2.9}
+					\Re K^0_{11}(\bm{q},\omega)=\dfrac{1}{24\pi mq^4}\bigg((2m\omega-q^2)^3-(2m\omega+q^2)^3\bigg)=\dfrac{1}{24\pi mq^4}(-q^6-24m^2\omega^2 q^2)=-\dfrac{q^2}{12\pi m}-\dfrac{m\omega^2q^2}{\pi}.
+				\end{equation}
+				If we take static limit $\omega=0$, then \eqref{3.2.9} reduces to \eqref{3.2.4}, as is expected.
+			
+			\item  {\bf Imaginary Parts of Density-density Response.}
+				Now we focus on the imaginary parts.
+				\begin{align}
+					\Im K^0_{00}&=(-\pi)\int\bigg(n_F(\xi_{\bm{p}})(1-n_F(\xi_{\bm{p+q}}))+(n_F(\xi_{\bm{p}})-1)n_F(\xi_{\bm{p+q}})\bigg)\delta(\omega+\xi_{\bm{p}}-\xi_{\bm{p+q}})\dfrac{\dd p^2}{(2\pi)^2}\nonumber\\
+					&=(-\pi)\int (n_F(\xi_{\bm{p}})-n_F(\xi_{\bm{p+q}}))\delta(\omega+\xi_{\bm{p}}-\xi_{\bm{p+q}})\dfrac{\dd p^2}{(2\pi)^2}\nonumber\\
+					&=\dfrac{-1}{4\pi}\int_0^{p_F} p\dd p\int_0^{2\pi}\dd\theta\,\varTheta(\xi_{\bm{p+q}}-\mu)\times\delta\left(\omega+\dfrac{\bm{q}^2}{2m}-\dfrac{(\bm{p+q})^2}{2m}\right)\dd p^2.\label{3.2.9}
+				\end{align}
+				Let $x\equiv|\bm{p+q}|$, then $x^2=p^2+q^2+2pq\cos\theta$ and 
+				\begin{equation*}
+					2x\dd x=2pq\sin\theta\dd\theta=2pq\sqrt{1-\dfrac{(p^2+q^2-x^2)^2}{4pq}}\dd\theta\implies\dd\theta=\dfrac{2x\dd x}{\sqrt{x^2-(p-q)^2}\sqrt{(p+q)^2-x^2}}.
+				\end{equation*}
+				So\footnote{The extra factor $2$ comes from the integral range of $\theta$.}
+				\begin{equation*}
+					\Im K^0_{00}=\dfrac{-1}{2\pi}\int_0^{p_F}p\dd p\times 2\int_{|p-q|}^{|p+q|}\dd x\dfrac{x\varTheta(x-p_F)\,\delta\left(\omega-\dfrac{x^2}{2m}+\dfrac{p^2}{2m}\right)}{\sqrt{(x^2-(p-q)^2)((p+q)^2-x^2)}}.
+				\end{equation*}
+				There is only one zero point in delta function $x_0=\sqrt{2m\omega+p^2}$ since $x>0$, so integral of $x$ can be performed directly
+				\begin{align}
+					\Im K^0_{00}&=\dfrac{-1}{2\pi}\int_0^{p_F}p\dd p\times 2\int_{|p-q|}^{|p+q|}\dd x\,\dfrac{x\varTheta(x-p_F)\delta(x-x_0)}{\left|\dfrac{-x_0}{m}\right|\sqrt{(x^2-(p-q)^2)((p+q)^2-x^2)}}\nonumber\\
+					&=\dfrac{m}{\pi}\int_0^{p_F}\dfrac{p\dd p}{\sqrt{4p^2q^2-(2m\omega-q^2)^2}}\label{3.2.10}
+				\end{align}
+				with $x_0>p_F$ as well as $|p-q|<x_0<|p+q|$, which is equivalent to
+				\begin{equation*}
+					p>p_a\equiv\sqrt{p_F^2-2m\omega},\quad q^2-2pq<2m\omega<q^2+2pq.
+				\end{equation*}
+				And the latter inequality can be unified as
+				\begin{equation*}
+					p>p_b\equiv\left|\dfrac{m\omega}{q}-\dfrac{q}{2}\right|.
+				\end{equation*}
+				The integral domain is determined by maximum between $p_a$ and $p_b$, i.e., $p_{\text{min}}=\max(p_a,p_b)$. But in our situation, $p_a>p_b$ always holds because both $\frac{m\omega}{q}$ and $\frac{q}{2}$ are far less than $p_F$ and then
+				\begin{equation*}
+					p_b^2-p_a^2=\left(\dfrac{m\omega}{q}+\dfrac{q}{2}\right)^2-p_F^2\sim -p_F^2<0.
+				\end{equation*}
+				Therefore, the integral \eqref{3.2.10} can be evaluated as
+				\begin{align}
+					\Im K^0_{00}&=\dfrac{m}{\pi}\int_{p_a}^{p_F}\dfrac{p\dd p}{\sqrt{4p^2q^2-(2m\omega-q^2)^2}}\nonumber\\
+					&=\dfrac{mp_F}{2\pi q}\left[\sqrt{1-\dfrac{1}{4p_F^2}\left(q-\dfrac{2m\omega}{q}\right)^2}-\sqrt{1-\dfrac{1}{4p_F^2}\left(q+\dfrac{2m\omega}{q}\right)^2}\right]=\dfrac{m^2\omega}{2\pi q p_F}+\mathcal{O}\left(q^4,\left(\dfrac{\omega}{q}\right)^4\right).\label{3.2.11}
+				\end{align}
+				\vspace{1em}
+				\hrule
+				\vspace{2pt}
+				\hrule
+				\vspace{1em}
+				Likewise, with slight changes of above discussions we can direct write down the final intergal of the imaginary part of the current-current correlation function
+				\begin{align}
+					\Im K^0_{11}&=\dfrac{m}{\pi}\int_{p_a}^{p_F}\dfrac{e^2p^2}{m^2}\dfrac{p\dd p}{\sqrt{4p^2q^2-(2m\omega-q^2)^2}}\nonumber\\
+					&=\dfrac{1}{24\pi mq^4}\Bigg\{\bigg((q^2-2m\omega)^2+2p_F^2q^2\bigg)\left(\sqrt{1-\left(\dfrac{q^2-2m\omega}{2p_Fq}\right)^2}-\sqrt{1-\left(\dfrac{q^2+2m\omega}{2p_Fq}\right)}\right)\nonumber\\
+					&\qquad\qquad+4m\omega q^2\sqrt{1-\left(\dfrac{q^2-2m\omega}{2p_Fq^2}\right)^2}\Bigg\}\nonumber\\
+					&\sim\dfrac{p_F}{12\pi mq^3}\Bigg\{\bigg((q^2-2m\omega)^2+2p_F^2q^2\bigg)\left[1-\dfrac{1}{2}\left(\dfrac{q^2-2m\omega}{2p_Fq}\right)^2-1+\dfrac{1}{2}\left(\dfrac{q^2-2m\omega}{2p_Fq}\right)^2+\mathcal{O}\left(q^2,\left(\dfrac{m\omega}{q}\right)^2\right)\right]\nonumber\\
+					&\qquad\qquad +4m\omega q^2\left[1-\dfrac{1}{2}\left(\dfrac{q^2+2m\omega}{2p_Fq}\right)^2+\mathcal{O}\left(q^2,\left(\dfrac{m\omega}{q}\right)^2\right)\right]\Bigg\}\nonumber\\
+					&=\dfrac{p_F}{12\pi m}\left\{\bigg[(q^2-2m\omega)^2+2p_F^2q^2\bigg]\dfrac{m\omega}{p_F^2q^3}+\dfrac{4m\omega}{q}-\dfrac{2m\omega}{q}\left(\dfrac{q^2+2m\omega}{2p_Fq}\right)^2+\mathcal{O}\left(q^3,\left(\dfrac{m\omega}{q}\right)^3\right)\right\}\nonumber\\
+					&=\dfrac{p_F}{12\pi m}\left[\dfrac{6m\omega}{q}+\mathcal{O}\left(q^3,\left(\dfrac{m\omega}{q}\right)^3\right)\right]\sim\dfrac{p_F \omega}{2\pi q}.\label{3.2.12}
+				\end{align}
+		\end{itemize}
+		
+		\indent To sum up, we have\footnote{Recall that $p_F=\sqrt{4\pi n_e}$.} ({\color{red} I do not know whether Halperin {\it el.} missed the diamagnetic term $\dfrac{-n_e}{m}$ or indeed cancelled it through the complicated integral I've shown above})
+		\begin{equation}\label{3.2.13}
+			\begin{cases}
+				K^0_{00}(\bm{q},\omega)=\dfrac{m}{2\pi}\left(1+i\dfrac{\omega}{qv_F}\right)+\cdots,\\[1em]
+				K^0_{11}(\bm{q},\omega)={\color{red}\dfrac{-n_e}{m}}-\dfrac{q^2}{12\pi m}+\dfrac{i\omega}{q}\dfrac{2n_e}{p_F}+\cdots.
+			\end{cases}
+		\end{equation}
+		This problem is retained to be solved in the future. But now, in light of the consistency with the expression obtained in \cite{Halperin1995Theory}, I will keep going on ignoring this diamagnetic term. Besides, the imaginary part of $K^0_{00}$ is small compared to the real part for $\omega\ll qp_F/m$ (clearly $\Im K^0_{00}\sim\mathcal{O}(1/p_F^2)$), and thus can be neglected. On the other hand, the imaginary part of $K^0_{11}$ is comparable to the real part. Thus we are left with
+		\begin{equation}\label{3.2.14}
+			K^0=\left[\begin{array}{cc}
+				\dfrac{m}{2\pi} & 0 \\
+				0 & -\dfrac{q^2}{12\pi m}+\dfrac{i\omega}{q}\dfrac{2n_e}{p_F}
+			\end{array}\right]
+		\end{equation}
+		and 
+		\begin{align*}
+			\mathrm{det}(K^0+U^{-1})&\sim\dfrac{in_e}{\pi}\dfrac{\omega}{qv_F}-\dfrac{q^2}{(\phi_0 \widetilde{\phi} )^2}\left(1+\dfrac{\widetilde{\phi}^2 }{6}+\dfrac{mv(q)}{2\pi}\right),
+		\end{align*}
+		where we have insert the expression of $\widetilde{\phi_0}=\frac{2\pi}{e}$. Different from the situation of Fermi liquid, there is a pole called ``overdamped mode'' locating at the imaginary frequency
+		\begin{equation}\label{3.2.15}
+			\omega\sim iq^3v(q)
+		\end{equation}
+		which represents the relaxation of density fluctuation.
+
+	\subsubsection{Large Frequency $\omega\gg qk_F/m$}
+			The case of high frequency is deviated from our mainline, so I just omit the computation detailes here and list the result below. For more pedagogical derivations, cf. Mihaila's arXiv preprint\cite{mihaila2011lindhard}.
+			\begin{equation}\label{3.2.14}
+				\begin{cases}
+					K^0_{00}(\bm{q},\omega)\sim\dfrac{-n_e}{m}\dfrac{q^2}{\omega^2},\\[1em]
+					K^0_{11}(\bm{q},\omega)\sim\dfrac{-n_e}{m}+\mathcal{O}(q^2).
+				\end{cases}
+				%&=\left.K^0_{00}(\bm{q},i\omega_m)\right|_{i\omega_m \rightarrow \omega+i\delta}\equiv\left.\dfrac{1}{\beta}\sum_{\omega_{n}}\int\dd p^2\,\dfrac{1}{i\omega_{n}-\xi_{\bm{p}}}\dfrac{1}{i\omega_{n}+i\omega_m-\xi_{\bm{p+q}}}\right|_{i\omega_m \rightarrow \omega+i\delta}\nonumber\\
+				%&=\int\dfrac{n_F(\xi_{\bm{k}})-n_F(\xi_{\bm{k+q}})}{\omega+\xi_{k}-\xi_{k+q}+i\delta}\dfrac{\dd^2 k}{(2\pi)^2}=\int\dfrac{n_F(\xi_{\bm{k}})-n_F(\xi_{\bm{k+q}})}{\xi_{k}-\xi_{k+q}}\dfrac{\dd^2 k}{(2\pi)^2}\nonumber
+			\end{equation}
+
+			\noindent Hence combined with the results of static limit, we find the density-density response function
+			\begin{equation}\label{3.2.15}
+				K_{00}(\bm{q},0)=\dfrac{m}{m v(q)+2\pi(1+\widetilde{\phi}^2/6)}.
+			\end{equation}
+			Obviously $K_{00}$ differs from the corresponding quantity of Fermi liquid at RPA throught the term $2\pi \widetilde{\phi}^2/6 $ in the denomenator of \eqref{3.2.15}. Note that the determinant of the matrix
+			\begin{equation*}
+				(K^0+U^{-1})\sim\left[
+				\begin{array}{cc}
+					\dfrac{-n_eq^2}{m\omega^2} & \dfrac{-iq}{\phi_0\widetilde{\phi}}\\
+					\dfrac{iq}{\phi_0 \widetilde{\phi} } & \dfrac{-n_e}{m}.
+				\end{array}\right]
+			\end{equation*}
+			vanishes at
+			\begin{equation}
+				\pm\omega_c=\dfrac{\phi_0 n_e \widetilde{\phi} }{m},
+			\end{equation}
+			we thus obtain the pole of $K_{\mu\nu}$ at $\omega=\omega_c$. This \emph{cyclotron frequency} is accurately in consistency with the celebrated \emph{Kohn's Theorem}\cite{kohn1961cyclotron}, claiming that\cite{Fradkin2013Field} {\bf the cyclotron resonance of \emph{Galilean-invariant} 2DEG lies exactly at the cyclotron frequency $\omega_c$ without any renomalizations due to interactions.}
+
 \bibliography{bib/hxd}
 %\backmatter
-%\input{chapters/acknowledgements}
 \end{document}
