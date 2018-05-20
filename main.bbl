@@ -1,0 +1,383 @@
+\begin{thebibliography}{66}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\providecommand{\href}[2]{\url{#2}}
+\providecommand{\doi}[1]{\href{https://doi.org/#1}{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
+  \urlstyle{same}\fi
+
+\bibitem[Von~Klitzing\ et~al.(1980)Von~Klitzing, Dorda, and
+  Pepper]{klitzing1980new}
+Von~Klitzing K, Dorda G, Pepper M.
+\newblock New method for high-accuracy determination of the fine-structure
+  constant based on quantized hall resistance.
+\newblock \textit{Physical Review Letters}, 1980, 45\penalty0 (6): 494.
+
+\bibitem[Von~Klitzing(1986)]{von1986quantized}
+Von~Klitzing K.
+\newblock The quantized hall effect.
+\newblock \textit{Reviews of Modern Physics}, 1986, 58\penalty0 (3): 519.
+
+\bibitem[Comtet\ et~al.(2000)Comtet, Jolicoeur, Ouvry, and
+  David]{comtet2000aspects}
+Comtet A, Jolicoeur T, Ouvry S, et~al.
+\newblock Aspects topologiques de la physique en basse dimension. topological
+  aspects of low dimensional systems: volume~69.
+\newblock Springer Science \& Business Media, 2000.
+
+\bibitem[Tsui\ et~al.(1982)Tsui, Stormer, and Gossard]{tsui1982two}
+Tsui D~C, Stormer H~L, Gossard A~C.
+\newblock Two-dimensional magnetotransport in the extreme quantum limit.
+\newblock \textit{Physical Review Letters}, 1982, 48\penalty0 (22): 1559.
+
+\bibitem[Stormer\ et~al.(1999)Stormer, Tsui, and
+  Gossard]{stormer1999fractional}
+Stormer H~L, Tsui D~C, Gossard A~C.
+\newblock The fractional quantum hall effect.
+\newblock \textit{Reviews of Modern Physics}, 1999, 71\penalty0 (2): S298.
+
+\bibitem[Laughlin(1983)]{laughlin1983anomalous}
+Laughlin R~B.
+\newblock Anomalous quantum hall effect: an incompressible quantum fluid with
+  fractionally charged excitations.
+\newblock \textit{Physical Review Letters}, 1983, 50\penalty0 (18): 1395.
+
+\bibitem[Tong(2016)]{tong2016lectures}
+Tong D.
+\newblock Lectures on the quantum hall effect.
+\newblock \textit{arXiv preprint arXiv:1606.06687}, 2016.
+
+\bibitem[Simon(1998)]{simon1998chern}
+Simon S~H.
+\newblock The chern-simons fermi liquid description of fractional quantum hall
+  states//\allowbreak{}Composite Fermions: A Unified View of the Quantum Hall
+  Regime.
+\newblock World Scientific, 1998: 91-194.
+
+\bibitem[Zhang\ et~al.(2005)Zhang, Tan, Stormer, and
+  Kim]{zhang2005experimental}
+Zhang Y, Tan Y~W, Stormer H~L, et~al.
+\newblock Experimental observation of the quantum hall effect and berry's phase
+  in graphene.
+\newblock \textit{nature}, 2005, 438\penalty0 (7065): 201.
+
+\bibitem[Gusynin\ et~al.(2005)Gusynin and Sharapov]{gusynin2005unconventional}
+Gusynin V, Sharapov S.
+\newblock Unconventional integer quantum hall effect in graphene.
+\newblock \textit{Physical review letters}, 2005, 95\penalty0 (14): 146801.
+
+\bibitem[Herbut(2007)]{herbut2007theory}
+Herbut I~F.
+\newblock Theory of integer quantum hall effect in graphene.
+\newblock \textit{Physical Review B}, 2007, 75\penalty0 (16): 165411.
+
+\bibitem[Sarma\ et~al.(2011)Sarma, Adam, Hwang, and Rossi]{sarma2011electronic}
+Sarma S~D, Adam S, Hwang E, et~al.
+\newblock Electronic transport in two-dimensional graphene.
+\newblock \textit{Reviews of Modern Physics}, 2011, 83\penalty0 (2): 407.
+
+\bibitem[Du\ et~al.(2009)Du, Skachko, Duerr, Luican, and
+  Andrei]{du2009fractional}
+Du X, Skachko I, Duerr F, et~al.
+\newblock Fractional quantum hall effect and insulating phase of dirac
+  electrons in graphene.
+\newblock \textit{Nature}, 2009, 462\penalty0 (7270): 192.
+
+\bibitem[Dean\ et~al.(2011)Dean, Young, Cadden-Zimansky, Wang, Ren, Watanabe,
+  Taniguchi, Kim, Hone, and Shepard]{dean2011multicomponent}
+Dean C, Young A, Cadden-Zimansky P, et~al.
+\newblock Multicomponent fractional quantum hall effect in graphene.
+\newblock \textit{Nature Physics}, 2011, 7\penalty0 (9): 693.
+
+\bibitem[Ki\ et~al.(2014)Ki, Fal’ko, Abanin, and Morpurgo]{ki2014observation}
+Ki D~K, Fal’ko V~I, Abanin D~A, et~al.
+\newblock Observation of even denominator fractional quantum hall effect in
+  suspended bilayer graphene.
+\newblock \textit{Nano letters}, 2014, 14\penalty0 (4): 2135-2139.
+
+\bibitem[Jain(1989)]{jain1989composite}
+Jain J~K.
+\newblock Composite-fermion approach for the fractional quantum hall effect.
+\newblock \textit{Physical review letters}, 1989, 63\penalty0 (2): 199.
+
+\bibitem[Zhang\ et~al.(1989)Zhang, Hansson, and Kivelson]{zhang1989effective}
+Zhang S~C, Hansson T~H, Kivelson S.
+\newblock Effective-field-theory model for the fractional quantum hall effect.
+\newblock \textit{Physical review letters}, 1989, 62\penalty0 (1): 82.
+
+\bibitem[Wilczek(1990)]{wilczek1990fractional}
+Wilczek F.
+\newblock Fractional statistics and anyon superconductivity: volume~5.
+\newblock World scientific, 1990.
+
+\bibitem[Chen\ et~al.(1989)Chen, Wilczek, Witten, and Halperin]{chen1989anyon}
+Chen Y~H, Wilczek F, Witten E, et~al.
+\newblock On anyon superconductivity.
+\newblock \textit{International Journal of Modern Physics B}, 1989, 3\penalty0
+  (07): 1001-1067.
+
+\bibitem[Lopez\ et~al.(1991)Lopez and Fradkin]{lopez1991fractional}
+Lopez A, Fradkin E.
+\newblock Fractional quantum hall effect and chern-simons gauge theories.
+\newblock \textit{Physical Review B}, 1991, 44\penalty0 (10): 5246.
+
+\bibitem[Fradkin(1993)]{fradkin1993wave}
+Fradkin E.
+\newblock Wave functionals for field theories and path integrals.
+\newblock \textit{Nuclear Physics B}, 1993, 389\penalty0 (3): 587-600.
+
+\bibitem[Halperin\ et~al.(1995)Halperin, Lee, and Read]{Halperin1995Theory}
+Halperin B~I, Lee P~A, Read N.
+\newblock Theory of the half-filled landau level.
+\newblock \textit{Physical Review B}, 1995, 47\penalty0 (12): 7312.
+
+\bibitem[Stern\ et~al.(1995)Stern and Halperin]{stern1995singularities}
+Stern A, Halperin B~I.
+\newblock Singularities in the fermi-liquid description of a partially filled
+  landau level and the energy gaps of fractional quantum hall states.
+\newblock \textit{Physical Review B}, 1995, 52\penalty0 (8): 5890.
+
+\bibitem[Haldane\ et~al.(1988)Haldane and Rezayi]{haldane1988spin}
+Haldane F, Rezayi E.
+\newblock Spin-singlet wave function for the half-integral quantum hall effect.
+\newblock \textit{Physical review letters}, 1988, 60\penalty0 (10): 956.
+
+\bibitem[Read\ et~al.(2000)Read and Green]{read2000paired}
+Read N, Green D.
+\newblock Paired states of fermions in two dimensions with breaking of parity
+  and time-reversal symmetries and the fractional quantum hall effect.
+\newblock \textit{Physical Review B}, 2000, 61\penalty0 (15): 10267.
+
+\bibitem[Moore\ et~al.(1991)Moore and Read]{moore1991nonabelions}
+Moore G, Read N.
+\newblock Nonabelions in the fractional quantum hall effect.
+\newblock \textit{Nuclear Physics B}, 1991, 360\penalty0 (2-3): 362-396.
+
+\bibitem[Morf(1998)]{morf1998transition}
+Morf R~H.
+\newblock Transition from quantum hall to compressible states in the second
+  landau level: new light on the $\nu$= 5/2 enigma.
+\newblock \textit{Physical review letters}, 1998, 80\penalty0 (7): 1505.
+
+\bibitem[Suen\ et~al.(1992)Suen, Engel, Santos, Shayegan, and
+  Tsui]{suen1992observation}
+Suen Y, Engel L, Santos M, et~al.
+\newblock Observation of a $\nu$= 1/2 fractional quantum hall state in a
+  double-layer electron system.
+\newblock \textit{Physical review letters}, 1992, 68\penalty0 (9): 1379.
+
+\bibitem[Du\ et~al.(1993)Du, Stormer, Tsui, Pfeiffer, and
+  West]{du1993experimental}
+Du R, Stormer H, Tsui D, et~al.
+\newblock Experimental evidence for new particles in the fractional quantum
+  hall effect.
+\newblock \textit{Physical review letters}, 1993, 70\penalty0 (19): 2944.
+
+\bibitem[Lopez\ et~al.(1995)Lopez and Fradkin]{lopez1995fermionic}
+Lopez A, Fradkin E.
+\newblock Fermionic chern-simons theory for the fractional quantum hall effect
+  in bilayers.
+\newblock \textit{Physical Review B}, 1995, 51\penalty0 (7): 4347.
+
+\bibitem[Mandal\ et~al.(1996)Mandal and Ravishankar]{mandal1996theory}
+Mandal S~S, Ravishankar V.
+\newblock Theory of arbitrarily polarized quantum hall states: Filling
+  fractions and wave functions.
+\newblock \textit{Physical Review B}, 1996, 54\penalty0 (12): 8688.
+
+\bibitem[Modak\ et~al.(2011)Modak, Mandal, and Sengupta]{modak2011fermionic}
+Modak S, Mandal S~S, Sengupta K.
+\newblock Fermionic chern-simons theory of su (4) fractional quantum hall
+  effect.
+\newblock \textit{Physical Review B}, 2011, 84\penalty0 (16): 165118.
+
+\bibitem[Pyatkovskiy\ et~al.(2011)Pyatkovskiy and
+  Gusynin]{pyatkovskiy2011dynamical}
+Pyatkovskiy P, Gusynin V.
+\newblock Dynamical polarization of graphene in a magnetic field.
+\newblock \textit{Physical Review B}, 2011, 83\penalty0 (7): 075422.
+
+\bibitem[Ni\ et~al.(2008)Ni, Yu, Lu, Wang, Feng, and Shen]{ni2008uniaxial}
+Ni Z~H, Yu T, Lu Y~H, et~al.
+\newblock Uniaxial strain on graphene: Raman spectroscopy study and band-gap
+  opening.
+\newblock \textit{ACS nano}, 2008, 2\penalty0 (11): 2301-2305.
+
+\bibitem[Farjam\ et~al.(2009)Farjam and Rafii-Tabar]{farjam2009comment}
+Farjam M, Rafii-Tabar H.
+\newblock Comment on “band structure engineering of graphene by strain:
+  First-principles calculations”.
+\newblock \textit{Physical Review B}, 2009, 80\penalty0 (16): 167401.
+
+\bibitem[Manes(2007)]{manes2007symmetry}
+Manes J~L.
+\newblock Symmetry-based approach to electron-phonon interactions in graphene.
+\newblock \textit{Physical Review B}, 2007, 76\penalty0 (4): 045430.
+
+\bibitem[Neto\ et~al.(2009)Neto, Guinea, Peres, Novoselov, and
+  Geim]{neto2009electronic}
+Neto A~C, Guinea F, Peres N~M, et~al.
+\newblock The electronic properties of graphene.
+\newblock \textit{Reviews of modern physics}, 2009, 81\penalty0 (1): 109.
+
+\bibitem[Castro-Villarreal\ et~al.(2017)Castro-Villarreal and
+  Ruiz-S{\'a}nchez]{castro2017pseudomagnetic}
+Castro-Villarreal P, Ruiz-S{\'a}nchez R.
+\newblock Pseudomagnetic field in curved graphene.
+\newblock \textit{Physical Review B}, 2017, 95\penalty0 (12): 125432.
+
+\bibitem[Guinea\ et~al.(2010)Guinea, Katsnelson, and Geim]{guinea2010energy}
+Guinea F, Katsnelson M, Geim A.
+\newblock Energy gaps and a zero-field quantum hall effect in graphene by
+  strain engineering.
+\newblock \textit{Nature Physics}, 2010, 6\penalty0 (1): 30.
+
+\bibitem[Verbiest\ et~al.(2015)Verbiest, Brinker, and
+  Stampfer]{verbiest2015uniformity}
+Verbiest G, Brinker S, Stampfer C.
+\newblock Uniformity of the pseudomagnetic field in strained graphene.
+\newblock \textit{Physical Review B}, 2015, 92\penalty0 (7): 075417.
+
+\bibitem[Bernevig\ et~al.(2006)Bernevig and Zhang]{bernevig2006quantum}
+Bernevig B~A, Zhang S~C.
+\newblock Quantum spin hall effect.
+\newblock \textit{Physical Review Letters}, 2006, 96\penalty0 (10): 106802.
+
+\bibitem[Altland\ et~al.(2010)Altland and Simons]{altland2010condensed}
+Altland A, Simons B~D.
+\newblock Condensed matter field theory.
+\newblock Cambridge University Press, 2010.
+
+\bibitem[Fu\ et~al.(2007)Fu and Kane]{fu2007topological}
+Fu L, Kane C~L.
+\newblock Topological insulators with inversion symmetry.
+\newblock \textit{Physical Review B}, 2007, 76\penalty0 (4): 045302.
+
+\bibitem[Goerbig(2011)]{goerbig2011electronic}
+Goerbig M.
+\newblock Electronic properties of graphene in a strong magnetic field.
+\newblock \textit{Reviews of Modern Physics}, 2011, 83\penalty0 (4): 1193.
+
+\bibitem[T{\H{o}}ke\ et~al.(2006)T{\H{o}}ke, Lammert, Crespi, and
+  Jain]{tHoke2006fractional}
+T{\H{o}}ke C, Lammert P~E, Crespi V~H, et~al.
+\newblock Fractional quantum hall effect in graphene.
+\newblock \textit{Physical Review B}, 2006, 74\penalty0 (23): 235417.
+
+\bibitem[T{\H{o}}ke\ et~al.(2007)T{\H{o}}ke and Jain]{tHoke20074}
+T{\H{o}}ke C, Jain J~K.
+\newblock Su (4) composite fermions in graphene: Fractional quantum hall states
+  without analog in gaas.
+\newblock \textit{Physical Review B}, 2007, 75\penalty0 (24): 245440.
+
+\bibitem[Nagaosa(1999)]{nagaosa1999quantum}
+Nagaosa N.
+\newblock Quantum field theory in strongly correlated electronic systems.
+\newblock Springer Science \& Business Media, 1999.
+
+\bibitem[Bolotin\ et~al.(2009)Bolotin, Ghahari, Shulman, Stormer, and
+  Kim]{bolotin2009observation}
+Bolotin K~I, Ghahari F, Shulman M~D, et~al.
+\newblock Observation of the fractional quantum hall effect in graphene.
+\newblock \textit{Nature}, 2009, 462\penalty0 (7270): 196.
+
+\bibitem[Nomura\ et~al.(2006)Nomura and MacDonald]{nomura2006quantum}
+Nomura K, MacDonald A~H.
+\newblock Quantum hall ferromagnetism in graphene.
+\newblock \textit{Physical Review Letters}, 2006, 96\penalty0 (25): 256602.
+
+\bibitem[Goerbig\ et~al.(2006)Goerbig, Moessner, and
+  Dou{\c{c}}ot]{goerbig2006electron}
+Goerbig M~O, Moessner R, Dou{\c{c}}ot B.
+\newblock Electron interactions in graphene in a strong magnetic field.
+\newblock \textit{Physical Review B}, 2006, 74\penalty0 (16): 161407.
+
+\bibitem[Apalkov\ et~al.(2006)Apalkov and Chakraborty]{apalkov2006fractional}
+Apalkov V~M, Chakraborty T.
+\newblock Fractional quantum hall states of dirac electrons in graphene.
+\newblock \textit{Physical review letters}, 2006, 97\penalty0 (12): 126801.
+
+\bibitem[Wen\ et~al.(1992)Wen and Zee]{wen1992classification}
+Wen X~g, Zee A.
+\newblock Classification of abelian quantum hall states and matrix formulation
+  of topological fluids.
+\newblock \textit{Physical Review B}, 1992, 46\penalty0 (4): 2290.
+
+\bibitem[Rajaraman(1997)]{rajaraman1997generalized}
+Rajaraman R.
+\newblock Generalized chern-simons theory of composite fermions in bilayer hall
+  systems.
+\newblock \textit{Physical Review B}, 1997, 56\penalty0 (11): 6788.
+
+\bibitem[Nagaosa(2013)]{nagaosa2013quantum}
+Nagaosa N.
+\newblock Quantum field theory in condensed matter physics.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem[Peskin(1995)]{peskin1995introduction}
+Peskin M~E.
+\newblock An introduction to quantum field theory.
+\newblock Westview press, 1995.
+
+\bibitem[Stratonovich(1957)]{Stratonovich1957On}
+Stratonovich R~L.
+\newblock On a method of calculating quantum distribution functions.
+\newblock \textit{Soviet Physics Doklady}, 1957, 2: 416.
+
+\bibitem[Hubbard(1959)]{hubbard1959calculation}
+Hubbard J.
+\newblock Calculation of partition functions.
+\newblock \textit{Physical Review Letters}, 1959, 3\penalty0 (2): 77.
+
+\bibitem[Abrikosov\ et~al.(2012)Abrikosov, Gorkov, and
+  Dzyaloshinski]{abrikosov2012methods}
+Abrikosov A~A, Gorkov L~P, Dzyaloshinski I~E.
+\newblock Methods of quantum field theory in statistical physics.
+\newblock Courier Corporation, 2012.
+
+\bibitem[Fradkin(2013)]{Fradkin2013Field}
+Fradkin E.
+\newblock Field theories of condensed matter physics.
+\newblock Cambridge University Press, 2013.
+
+\bibitem[Mahan(2013)]{mahan2013many}
+Mahan G~D.
+\newblock Many-particle physics.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem[Peterson\ et~al.(2014)Peterson and Nayak]{peterson2014effects}
+Peterson M~R, Nayak C.
+\newblock Effects of landau level mixing on the fractional quantum hall effect
+  in monolayer graphene.
+\newblock \textit{Physical review letters}, 2014, 113\penalty0 (8): 086401.
+
+\bibitem[Peterson\ et~al.(2013)Peterson and Nayak]{peterson2013more}
+Peterson M~R, Nayak C.
+\newblock More realistic hamiltonians for the fractional quantum hall regime in
+  gaas and graphene.
+\newblock \textit{Physical Review B}, 2013, 87\penalty0 (24): 245129.
+
+\bibitem[Son(2015)]{son2015composite}
+Son D~T.
+\newblock Is the composite fermion a dirac particle?
+\newblock \textit{Physical Review X}, 2015, 5\penalty0 (3): 031027.
+
+\bibitem[Fr{\"a}{\ss}dorf(2018)]{frassdorf2018abelian}
+Fr{\"a}{\ss}dorf C.
+\newblock Abelian chern-simons theory for the fractional quantum hall effect in
+  graphene.
+\newblock \textit{Physical Review B}, 2018, 97\penalty0 (11): 115123.
+
+\bibitem[Sadovskii(2006)]{sadovskii2006diagrammatics}
+Sadovskii M~V.
+\newblock Diagrammatics: lectures on selected problems in condensed matter
+  theory.
+\newblock World Scientific, 2006.
+
+\bibitem[Kohn(1961)]{kohn1961cyclotron}
+Kohn W.
+\newblock Cyclotron resonance and de haas-van alphen oscillations of an
+  interacting electron gas.
+\newblock \textit{Physical Review}, 1961, 123\penalty0 (4): 1242.
+
+\end{thebibliography}
