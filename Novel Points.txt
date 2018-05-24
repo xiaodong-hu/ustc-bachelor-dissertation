@@ -1,0 +1,3 @@
+We constrain massless Dirac fermions in graphene to the lowest LL so that they can be effectively regarded as nonrelativistic particles with parabolic dispersion. 
+
+We also impose a pseudo-magnetic field to graphene induced by symmetrical strain, which alters its direction at each freedom and results in the seemingly strange electromagnetic response.
